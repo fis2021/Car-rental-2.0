@@ -1,0 +1,6 @@
+.vbox {
+    -fx-background-radius: 0px 50px 50px 0px;
+}
+.display {
+    -fx-background-radius: 50px 50px 50px 50px;
+}

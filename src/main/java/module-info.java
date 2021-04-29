@@ -4,4 +4,5 @@ module rc.project {
 
     opens rc.project to javafx.fxml;
     exports rc.project;
+
 }
