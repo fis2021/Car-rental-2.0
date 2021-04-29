@@ -14,7 +14,7 @@ We also provide the plus service of an experienced driver if desired.
 * [Java 15.0.1](https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html)
 * [JavaFX (GUI)](https://openjfx.io/openjfx-docs/)
 * [Maven (Build Tool)](https://maven.apache.org/)
-* [SQ lite (Database)](https://www.sqlite.org/index.html)
+* [MySQL (Database)](https://www.mysql.com/downloads/)
 
 ## Functionality
                                                                                                        
