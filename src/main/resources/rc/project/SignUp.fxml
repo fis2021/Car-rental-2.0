@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="528.0" prefWidth="765.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.SignUpController">
+   <children>
+      <ImageView fitHeight="140.0" fitWidth="197.0" layoutX="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+<!--            <Image url="@../images/car.png" />-->
+         </image>
+      </ImageView>
+
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="225.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="225.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="225.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+<!--            <Image url="@../images/iconfinder_icons_password_1564520.png" />-->
+         </image>
+      </ImageView>
+
+      <Label layoutX="330.0" layoutY="147.0" prefHeight="27.0" prefWidth="67.0" text="Rent a" textFill="#5bb4cd">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="390.0" layoutY="147.0" prefHeight="27.0" prefWidth="30.0" text="Car" textFill="#a2b1b5">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="262.0" layoutY="195.0" prefHeight="25.0" prefWidth="113.0" promptText="First Name" style="-fx-background-color: #787880;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="390.0" layoutY="195.0" prefHeight="25.0" prefWidth="113.0" promptText="Last Name" style="-fx-background-color: #787880;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="261.0" layoutY="263.0" prefHeight="30.0" prefWidth="243.0" promptText="exemple@exemple.com" style="-fx-background-color: #787880;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <PasswordField layoutX="262.0" layoutY="325.0" prefHeight="30.0" prefWidth="243.0" promptText="Passowrd" style="-fx-background-color: #787880;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+   </children>
+</AnchorPane>

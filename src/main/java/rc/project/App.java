@@ -13,7 +13,8 @@ public class App extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("Dashboard.fxml"));
         Parent content = loader.load();
-        primaryStage.setScene(new Scene(content, 1080, 720));
+        Scene scene_main = new Scene(content, 1080, 720);
+        primaryStage.setScene(scene_main);
         primaryStage.show();
     }
 
