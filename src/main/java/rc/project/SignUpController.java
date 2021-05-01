@@ -7,20 +7,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ResourceBundle;
 
 public class SignUpController implements Initializable  {
 
-//    @FXML
-//    private JFXButton signIn;
-
-//    @FXML
-//    private JFXButton login;
 
     @FXML
     private TextField firstName;
@@ -29,41 +28,41 @@ public class SignUpController implements Initializable  {
     private TextField lastName;
 
     @FXML
-    private TextField username;
+    private TextField email;
 
     @FXML
     private PasswordField password;
 
+    @FXML
+    private PasswordField confirmPassword;
+
+    @FXML
+    private Button signUp;
+
+    @FXML
+    private DatePicker dateOfBirth;
 
 
     @FXML
-    void loginAction(ActionEvent event) {
-        try {
-//            signIn.getScene().getWindow().hide();
-            Stage stage = new Stage();
-            URL fxmlURL = getClass().getResource("rc.project/LoginMain.fxml");
-            FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
-            Parent root1 = fxmlLoader.load();
-            stage.setScene(new Scene(root1));
-            //stage.setAlwaysOnTop(true);
-            stage.show();
-            stage.setResizable(false);
-        } catch (Exception exception) {
-            System.out.println(" Error login: " + exception);
-            exception.printStackTrace();
-        }
-    }
+    private void signUpAction() {
 
-    @FXML
-    void signInAction(ActionEvent event) {
+        LocalDate today = LocalDate.now();
+        LocalDate bday = LocalDate.of( (dateOfBirth.getValue().getYear()),
+                (dateOfBirth.getValue().getMonth()),
+                (dateOfBirth.getValue().getDayOfMonth()) );
+
+        int ageInYears = Period.between(bday, today).getYears();
+        System.out.println(Integer.toString(ageInYears));
+        //ageField.setText(Integer.toString(ageInYears) + " Years");
 
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         firstName.setStyle("-fx-text-inner-color: #a0a2ab;");
         lastName.setStyle("-fx-text-inner-color: #a0a2ab;");
         password.setStyle("-fx-text-inner-color: #a0a2ab;");
-        username.setStyle("-fx-text-inner-color: #a0a2ab;");
+        email.setStyle("-fx-text-inner-color: #a0a2ab;");
     }
 }

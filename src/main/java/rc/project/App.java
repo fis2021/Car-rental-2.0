@@ -15,6 +15,7 @@ public class App extends Application {
         Parent content = loader.load();
         Scene scene_main = new Scene(content, 1080, 720);
         primaryStage.setScene(scene_main);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
