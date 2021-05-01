@@ -15,7 +15,7 @@
    <children>
       <AnchorPane fx:id="dashboard" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox layoutX="-7.0" layoutY="29.0" maxHeight="350.0" maxWidth="180.0" prefHeight="350.0" style="-fx-background-color: #333333;" styleClass="vbox" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+            <VBox layoutX="-7.0" layoutY="29.0" maxHeight="350.0" maxWidth="180.0" prefHeight="333.0" prefWidth="180.0" style="-fx-background-color: #333333;" styleClass="vbox" AnchorPane.bottomAnchor="367.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
                <children>
                   <ImageView fx:id="logo" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
 
@@ -31,28 +31,28 @@
                         <Insets left="20.0" />
                      </VBox.margin>
                      <font>
-                        <Font name="Consolas Bold" size="18.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font></Button>
                   <Button mnemonicParsing="false" onAction="#loadStatus" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Status" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="20.0" top="10.0" />
                      </VBox.margin>
                      <font>
-                        <Font name="Consolas Bold" size="18.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font></Button>
                   <Button fx:id="accountButton" mnemonicParsing="false" onAction="#loadAccount" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Account" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="20.0" top="10.0" />
                      </VBox.margin>
                      <font>
-                     <Font name="Consolas Bold" size="18.0" />
+                     <Font name="System Bold" size="15.0" />
                   </font></Button>
                   <Button fx:id="contactButton" mnemonicParsing="false" onAction="#loadContact" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Contact" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" top="10.0" />
                      </VBox.margin>
                      <font>
-                        <Font name="Consolas Bold" size="18.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
 
@@ -61,10 +61,10 @@
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane maxHeight="310.0" maxWidth="180.0" prefHeight="310.0" prefWidth="180.0" style="-fx-background-color: #333333;" styleClass="vbox" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="390.0" />
+      <AnchorPane layoutY="374.0" maxHeight="326.0" maxWidth="180.0" prefHeight="326.0" prefWidth="180.0" style="-fx-background-color: #333333;" styleClass="vbox" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="374.0" />
       <AnchorPane fx:id="display" style="-fx-background-color: #555555;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="changeMe" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <AnchorPane fx:id="changeMe" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <children>
                   <Pane style="-fx-background-color: #333333;" styleClass="display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
