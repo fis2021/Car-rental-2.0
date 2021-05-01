@@ -2,23 +2,23 @@
 
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #555555;" stylesheets="@Dashboard.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.Browse">
    <children>
       <Pane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" styleClass="display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="660.0" prefWidth="820.0">
+            <HBox fx:id="hBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="660.0" prefWidth="820.0">
                <children>
                   <ScrollPane fx:id="scrollPane" prefHeight="660.0" prefWidth="820.0" style="-fx-background-color: #333333;">
                      <content>
                         <GridPane fx:id="gridPane" prefHeight="0.0" prefWidth="0.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                           </rowConstraints>
                         </GridPane>
                      </content>
                   </ScrollPane>

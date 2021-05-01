@@ -2,16 +2,17 @@ package rc.project;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 
 public class Item {
 
     @FXML
-    private Text itemText;
+    private Label itemText;
 
     @FXML
-    private Text itemPrice;
+    private Label itemPrice;
 
     @FXML
     private ImageView itemPhoto;
@@ -21,5 +22,15 @@ public class Item {
 
     @FXML
     private Button itemOrder;
+
+    private Car car;
+
+    public void setData(Car car) {
+        this.car = car;
+        itemText.setText(car.getName());
+        itemPrice.setText(car.getPrice() + " " + App.CURRENCY + " / day");
+        //Image image = new Image(getClass().getResourceAsStream(car.getImgSrc()));
+        //itemPhoto.setImage(image);
+    }
 
 }
