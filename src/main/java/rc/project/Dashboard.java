@@ -56,7 +56,7 @@ public class Dashboard {
     @FXML
     public void loadContact(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("deModificat.fxml"));
+        loader.setLocation(getClass().getResource("Item.fxml"));
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
     }

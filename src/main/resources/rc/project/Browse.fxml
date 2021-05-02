@@ -13,11 +13,11 @@
          <children>
             <HBox fx:id="hBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="660.0" prefWidth="820.0">
                <children>
-                  <ScrollPane fx:id="scrollPane" prefHeight="660.0" prefWidth="820.0" style="-fx-background-color: #333333;">
+                  <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="660.0" prefWidth="820.0" style="-fx-background-color: #333333;" vbarPolicy="NEVER">
                      <content>
                         <GridPane fx:id="gridPane" prefHeight="0.0" prefWidth="0.0">
                            <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                              <RowConstraints minHeight="0.0" />
                            </rowConstraints>
                         </GridPane>
                      </content>

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -28,28 +29,80 @@ public class Browse implements Initializable {
     private GridPane gridPane;
 
     private List<Car> cars = new ArrayList<>();
+    private Image image;
 
     private List<Car> getData() {
         List<Car> cars = new ArrayList<>();
         Car car;
 
-        for(int i=0; i<9; i++) {
-            car = new Car();
-            car.setName("Ford Mondeo");
-            car.setPrice(50);
-            car.setImgSrc("/masini/ford-mondeo.png");
-            cars.add(car);
-        }
+        car = new Car();
+        car.setName("Ford Mondeo");
+        car.setPrice(55);
+        //car.setImgSrc("/masini/ford-mondeo.png");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Bmw Seria 1");
+        car.setPrice(60);
+        //car.setImgSrc("/masini/bmw-seria-1.png");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Ford Mondeo");
+        car.setPrice(55);
+        //car.setImgSrc("/masini/ford-mondeo.png");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Bmw Seria 1");
+        car.setPrice(60);
+        //car.setImgSrc("/masini/bmw-seria-1.png");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Ford Mondeo");
+        car.setPrice(55);
+        //car.setImgSrc("/masini/ford-mondeo.png");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Bmw Seria 1");
+        car.setPrice(60);
+        //car.setImgSrc("/masini/bmw-seria-1.png");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Ford Mondeo");
+        car.setPrice(55);
+        //car.setImgSrc("/masini/ford-mondeo.png");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Bmw Seria 1");
+        car.setPrice(60);
+        //car.setImgSrc("/masini/bmw-seria-1.png");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Ford Mondeo");
+        car.setPrice(55);
+        //car.setImgSrc("/masini/ford-mondeo.png");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Bmw Seria 1");
+        car.setPrice(60);
+        //car.setImgSrc("/masini/bmw-seria-1.png");
+        cars.add(car);
 
         return cars;
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cars.addAll(getData());
         int column = 0;
-        int row = 1;
+        int row = 0;
         try {
             for (int i = 0; i < cars.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -75,7 +128,7 @@ public class Browse implements Initializable {
                 gridPane.setPrefHeight(Region.USE_COMPUTED_SIZE);
                 gridPane.setMaxHeight(Region.USE_PREF_SIZE);
 
-                GridPane.setMargin(anchorPane, new Insets(5));
+                GridPane.setMargin(anchorPane, new Insets(11));
             }
         } catch(IOException e){
                 e.printStackTrace();
