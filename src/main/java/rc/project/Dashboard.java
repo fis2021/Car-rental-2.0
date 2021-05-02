@@ -32,7 +32,7 @@ public class Dashboard {
     @FXML
     public void loadBrowse(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("Browse.fxml"));
+        loader.setLocation(getClass().getResource("fxml/Browse.fxml"));
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
     }
@@ -48,7 +48,7 @@ public class Dashboard {
     @FXML
     public void loadAccount(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("deModificat.fxml"));
+        loader.setLocation(getClass().getResource("fxml/LoginMain.fxml"));
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
     }
@@ -56,12 +56,8 @@ public class Dashboard {
     @FXML
     public void loadContact(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("Item.fxml"));
+        loader.setLocation(getClass().getResource("fxml/Item.fxml"));
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
     }
-
-
-
-
 }

@@ -23,7 +23,7 @@
                         <Insets left="40.0" />
                      </VBox.margin>
                      <image>
-                        <Image url="@car-25-100.png" />
+                        <Image url="@../icons/car-25-100.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="browseButton" mnemonicParsing="false" onAction="#loadBrowse" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Browse" textFill="WHITE">
@@ -81,7 +81,7 @@
       </AnchorPane>
    </children>
    <stylesheets>
-      <URL value="@buttonStyle.css" />
-      <URL value="@Dashboard.css" />
+      <URL value="@../css/buttonStyle.css" />
+      <URL value="@../css/Dashboard.css" />
    </stylesheets>
 </AnchorPane>

@@ -29,8 +29,8 @@ public class Item {
         this.car = car;
         itemText.setText(car.getName());
         itemPrice.setText(car.getPrice() + " " + App.CURRENCY + " / day");
-        //Image image = new Image(getClass().getResourceAsStream(car.getImgSrc()));
-        //itemPhoto.setImage(image);
+        Image image = new Image(getClass().getResourceAsStream(car.getImgSrc()));
+        itemPhoto.setImage(image);
     }
 
 }

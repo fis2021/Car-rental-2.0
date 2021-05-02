@@ -36,63 +36,16 @@ public class Browse implements Initializable {
         Car car;
 
         car = new Car();
-        car.setName("Ford Mondeo");
-        car.setPrice(55);
-        //car.setImgSrc("/masini/ford-mondeo.png");
-        cars.add(car);
 
-        car = new Car();
         car.setName("Bmw Seria 1");
         car.setPrice(60);
-        //car.setImgSrc("/masini/bmw-seria-1.png");
+        car.setImgSrc("masini/bmw-seria-1.png");
         cars.add(car);
 
         car = new Car();
         car.setName("Ford Mondeo");
         car.setPrice(55);
-        //car.setImgSrc("/masini/ford-mondeo.png");
-        cars.add(car);
-
-        car = new Car();
-        car.setName("Bmw Seria 1");
-        car.setPrice(60);
-        //car.setImgSrc("/masini/bmw-seria-1.png");
-        cars.add(car);
-
-        car = new Car();
-        car.setName("Ford Mondeo");
-        car.setPrice(55);
-        //car.setImgSrc("/masini/ford-mondeo.png");
-        cars.add(car);
-
-        car = new Car();
-        car.setName("Bmw Seria 1");
-        car.setPrice(60);
-        //car.setImgSrc("/masini/bmw-seria-1.png");
-        cars.add(car);
-
-        car = new Car();
-        car.setName("Ford Mondeo");
-        car.setPrice(55);
-        //car.setImgSrc("/masini/ford-mondeo.png");
-        cars.add(car);
-
-        car = new Car();
-        car.setName("Bmw Seria 1");
-        car.setPrice(60);
-        //car.setImgSrc("/masini/bmw-seria-1.png");
-        cars.add(car);
-
-        car = new Car();
-        car.setName("Ford Mondeo");
-        car.setPrice(55);
-        //car.setImgSrc("/masini/ford-mondeo.png");
-        cars.add(car);
-
-        car = new Car();
-        car.setName("Bmw Seria 1");
-        car.setPrice(60);
-        //car.setImgSrc("/masini/bmw-seria-1.png");
+        car.setImgSrc("masini/ford-mondeo.png");
         cars.add(car);
 
         return cars;
@@ -106,7 +59,7 @@ public class Browse implements Initializable {
         try {
             for (int i = 0; i < cars.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("Item.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("fxml/Item.fxml"));
 
                 AnchorPane anchorPane = fxmlLoader.load();
 

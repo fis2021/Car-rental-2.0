@@ -19,12 +19,12 @@
                <children>
                   <Label fx:id="itemText" alignment="CENTER" prefWidth="250.0" text="Ford Mondeo" textAlignment="CENTER" />
                   <Label fx:id="itemPrice" alignment="CENTER" prefWidth="250.0" text="50 ron / day" textAlignment="CENTER" />
-                  <ImageView fitHeight="160.0" fitWidth="250.0" pickOnBounds="true">
+                  <ImageView fx:id="itemPhoto" fitHeight="160.0" fitWidth="250.0" pickOnBounds="true">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                      <image>
-                        <Image url="@masini/ford-mondeo.png" />
+                        <Image url="@../masini/ford-mondeo.png" />
                      </image>
                   </ImageView>
                   <HBox prefHeight="100.0" prefWidth="200.0">
@@ -47,7 +47,7 @@
       </Pane>
    </children>
    <stylesheets>
-      <URL value="@Dashboard.css" />
-      <URL value="@buttonStyle.css" />
+      <URL value="@../css/Dashboard.css" />
+      <URL value="@../css/buttonStyle.css" />
    </stylesheets>
 </AnchorPane>
