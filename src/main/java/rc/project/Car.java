@@ -5,7 +5,8 @@ public class Car {
     private String imgSrc;
     private String details;
     private double price;
-    private String color;
+    private String color1;
+    private String color2;
 
     public String getName() {
         return name;
@@ -31,8 +32,8 @@ public class Car {
         this.price = price;
     }
 
-    public String getColor() {
-        return color;
+    public String getColor1() {
+        return color1;
     }
 
     public String getDetails() {
@@ -43,7 +44,15 @@ public class Car {
         this.details = details;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor1(String color) {
+        this.color1 = color;
+    }
+
+    public String getColor2() {
+        return color2;
+    }
+
+    public void setColor2(String color) {
+        this.color2 = color;
     }
 }

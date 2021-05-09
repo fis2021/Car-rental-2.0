@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.text.BreakIterator;
@@ -34,6 +35,9 @@ public class Item extends Dashboard {
     private AnchorPane itemAnchor;
 
     @FXML
+    private Pane pane;
+
+    @FXML
     private Label detailsLabel;
 
     private Car car;
@@ -46,6 +50,7 @@ public class Item extends Dashboard {
         detailsLabel.setText(car.getDetails());
         Image image = new Image(getClass().getResourceAsStream(car.getImgSrc()));
         itemPhoto.setImage(image);
+        pane.setStyle("-fx-background-color: radial-gradient(center 50% 50% , radius 60% ,#" + car.getColor1() +", #" + car.getColor2() +");");
     }
 
     private int ok=0;

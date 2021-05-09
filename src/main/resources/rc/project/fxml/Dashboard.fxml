@@ -18,13 +18,13 @@
          <children>
             <VBox layoutX="-7.0" layoutY="29.0" maxHeight="350.0" maxWidth="180.0" prefHeight="333.0" prefWidth="180.0" style="-fx-background-color: #333333;" styleClass="vbox" AnchorPane.bottomAnchor="367.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
                <children>
-                  <ImageView fx:id="logo" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="logo" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" scaleX="1.4" scaleY="1.4" translateY="10.0">
 
                      <VBox.margin>
                         <Insets left="40.0" />
                      </VBox.margin>
                      <image>
-                        <Image url="@../icons/car-25-100.png" />
+                        <Image url="@../icons/old-car(2).png" />
                      </image>
                   </ImageView>
                   <Button fx:id="browseButton" mnemonicParsing="false" onAction="#loadBrowse" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Browse" textFill="WHITE">

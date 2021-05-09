@@ -41,6 +41,17 @@ public class Browse implements Initializable {
         car.setPrice(60);
         car.setImgSrc("masini/bmw1.png");
         car.setDetails("masina 1");
+        car.setColor1("8B9692");
+        car.setColor2("46844F");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Mercedes");
+        car.setPrice(40);
+        car.setImgSrc("masini/mercedes1.png");
+        car.setDetails("masina 3");
+        car.setColor1("8896A0");
+        car.setColor2("31444A");
         cars.add(car);
 
         car = new Car();
@@ -48,6 +59,89 @@ public class Browse implements Initializable {
         car.setPrice(40);
         car.setImgSrc("masini/bmw2.png");
         car.setDetails("masina 2");
+        car.setColor1("9C917C");
+        car.setColor2("4F483F");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Chevrolet");
+        car.setPrice(40);
+        car.setImgSrc("masini/chevrolet1.png");
+        car.setDetails("masina 3");
+        car.setColor1("FFB291");
+        car.setColor2("964439");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Audi");
+        car.setPrice(40);
+        car.setImgSrc("masini/audi1.png");
+        car.setDetails("masina 3");
+        car.setColor1("DE73FF");
+        car.setColor2("9F4193");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Mercedes 2");
+        car.setPrice(40);
+        car.setImgSrc("masini/mercedes2.png");
+        car.setDetails("masina 3");
+        car.setColor1("F9DD78");
+        car.setColor2("FD6A03");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Mercedes 2");
+        car.setPrice(40);
+        car.setImgSrc("masini/volkswagen-3754571_640.png");
+        car.setDetails("masina 3");
+        car.setColor1("FF7528");
+        car.setColor2("496F23");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Mercedes 2");
+        car.setPrice(40);
+        car.setImgSrc("masini/packard-one-twenty-4818885_640.png");
+        car.setDetails("masina 3");
+        car.setColor1("79DD78");
+        car.setColor2("8D6A03");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Mercedes 2");
+        car.setPrice(40);
+        car.setImgSrc("masini/italy-3540815_640.png");
+        car.setDetails("masina 3");
+        car.setColor1("F9D648");
+        car.setColor2("356A03");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Mercedes 2");
+        car.setPrice(40);
+        car.setImgSrc("masini/vw-4309412_640.png");
+        car.setDetails("masina 3");
+        car.setColor1("131278");
+        car.setColor2("BB6A52");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Mercedes 2");
+        car.setPrice(40);
+        car.setImgSrc("masini/jeep-3874584_640.png");
+        car.setDetails("masina 3");
+        car.setColor1("54DD68");
+        car.setColor2("BD6753");
+        cars.add(car);
+
+        car = new Car();
+        car.setName("Mercedes 2");
+        car.setPrice(40);
+        car.setImgSrc("masini/bmw-500-4344066_640.png");
+        car.setDetails("masina 3");
+        car.setColor1("692D78");
+        car.setColor2("AD6E03");
         cars.add(car);
 
         return cars;
