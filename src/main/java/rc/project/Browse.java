@@ -36,7 +36,15 @@ public class Browse implements Initializable {
         Car car;
 
         car = new Car();
+        car.setName("Bmw 1964");
+        car.setPrice(40);
+        car.setImgSrc("masini/bmw2.png");
+        car.setDetails("masina 2");
+        car.setColor1("9C917C");
+        car.setColor2("4F483F");
+        cars.add(car);
 
+        car = new Car();
         car.setName("Bmw Oldtimer 1502");
         car.setPrice(60);
         car.setImgSrc("masini/bmw1.png");
@@ -55,15 +63,6 @@ public class Browse implements Initializable {
         cars.add(car);
 
         car = new Car();
-        car.setName("Bmw 1964");
-        car.setPrice(40);
-        car.setImgSrc("masini/bmw2.png");
-        car.setDetails("masina 2");
-        car.setColor1("9C917C");
-        car.setColor2("4F483F");
-        cars.add(car);
-
-        car = new Car();
         car.setName("Chevrolet");
         car.setPrice(40);
         car.setImgSrc("masini/chevrolet1.png");
@@ -73,12 +72,12 @@ public class Browse implements Initializable {
         cars.add(car);
 
         car = new Car();
-        car.setName("Audi");
+        car.setName("4");
         car.setPrice(40);
-        car.setImgSrc("masini/audi1.png");
+        car.setImgSrc("masini/vw-4309412_640.png");
         car.setDetails("masina 3");
-        car.setColor1("DE73FF");
-        car.setColor2("9F4193");
+        car.setColor1("019F8E");
+        car.setColor2("2A52A4");
         cars.add(car);
 
         car = new Car();
@@ -91,25 +90,25 @@ public class Browse implements Initializable {
         cars.add(car);
 
         car = new Car();
-        car.setName("Mercedes 2");
+        car.setName("1");
         car.setPrice(40);
         car.setImgSrc("masini/volkswagen-3754571_640.png");
         car.setDetails("masina 3");
-        car.setColor1("FF7528");
-        car.setColor2("496F23");
+        car.setColor1("A5FE83");
+        car.setColor2("02A08E");
         cars.add(car);
 
         car = new Car();
-        car.setName("Mercedes 2");
+        car.setName("Audi");
         car.setPrice(40);
-        car.setImgSrc("masini/packard-one-twenty-4818885_640.png");
+        car.setImgSrc("masini/audi1.png");
         car.setDetails("masina 3");
-        car.setColor1("79DD78");
-        car.setColor2("8D6A03");
+        car.setColor1("692D78");
+        car.setColor2("ED80EF");
         cars.add(car);
 
         car = new Car();
-        car.setName("Mercedes 2");
+        car.setName("3");
         car.setPrice(40);
         car.setImgSrc("masini/italy-3540815_640.png");
         car.setDetails("masina 3");
@@ -118,30 +117,30 @@ public class Browse implements Initializable {
         cars.add(car);
 
         car = new Car();
-        car.setName("Mercedes 2");
+        car.setName("2");
         car.setPrice(40);
-        car.setImgSrc("masini/vw-4309412_640.png");
+        car.setImgSrc("masini/packard-one-twenty-4818885_640.png");
         car.setDetails("masina 3");
-        car.setColor1("131278");
-        car.setColor2("BB6A52");
+        car.setColor1("F8D717");
+        car.setColor2("EBB419");
         cars.add(car);
 
         car = new Car();
-        car.setName("Mercedes 2");
+        car.setName("5");
         car.setPrice(40);
         car.setImgSrc("masini/jeep-3874584_640.png");
         car.setDetails("masina 3");
-        car.setColor1("54DD68");
-        car.setColor2("BD6753");
+        car.setColor1("B03D2A");
+        car.setColor2("FF6A59");
         cars.add(car);
 
         car = new Car();
-        car.setName("Mercedes 2");
+        car.setName("6");
         car.setPrice(40);
         car.setImgSrc("masini/bmw-500-4344066_640.png");
         car.setDetails("masina 3");
-        car.setColor1("692D78");
-        car.setColor2("AD6E03");
+        car.setColor1("004A53");
+        car.setColor2("1BA8FE");
         cars.add(car);
 
         return cars;
