@@ -1,15 +1,21 @@
 package rc.project;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class Dashboard {
 
@@ -23,7 +29,7 @@ public class Dashboard {
     private Button browseButton;
 
     @FXML
-    private ImageView logo;
+    private Button logo;
 
     @FXML
     private AnchorPane display;
@@ -56,7 +62,7 @@ public class Dashboard {
     @FXML
     public void loadStatus(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("fxml/deModificat.fxml"));
+        loader.setLocation(getClass().getResource("fxml/HomePage.fxml"));
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
     }
@@ -69,4 +75,11 @@ public class Dashboard {
         changeMe.getChildren().setAll(content);
     }
 
+    @FXML
+    public void loadHome(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/HomePage.fxml"));
+        Parent content = loader.load();
+        changeMe.getChildren().setAll(content);
+    }
 }
