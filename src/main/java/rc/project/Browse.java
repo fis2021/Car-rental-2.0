@@ -37,15 +37,17 @@ public class Browse implements Initializable {
 
         car = new Car();
 
-        car.setName("Bmw Seria 1");
+        car.setName("Bmw Oldtimer 1502");
         car.setPrice(60);
-        car.setImgSrc("masini/bmw-seria-1.png");
+        car.setImgSrc("masini/bmw1.png");
+        car.setDetails("masina 1");
         cars.add(car);
 
         car = new Car();
-        car.setName("Ford Mondeo");
-        car.setPrice(55);
-        car.setImgSrc("masini/ford-mondeo.png");
+        car.setName("Bmw 1964");
+        car.setPrice(40);
+        car.setImgSrc("masini/bmw2.png");
+        car.setDetails("masina 2");
         cars.add(car);
 
         return cars;

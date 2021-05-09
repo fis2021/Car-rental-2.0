@@ -3,6 +3,7 @@ package rc.project;
 public class Car {
     private String name;
     private String imgSrc;
+    private String details;
     private double price;
     private String color;
 
@@ -32,6 +33,14 @@ public class Car {
 
     public String getColor() {
         return color;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 
     public void setColor(String color) {
