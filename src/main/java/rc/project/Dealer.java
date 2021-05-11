@@ -24,6 +24,9 @@ public class Dealer {
     private Button seeReviews;
 
     @FXML
+    private Button login;
+
+    @FXML
     private AnchorPane changeMeDealer;
 
     @FXML
