@@ -86,7 +86,7 @@ public class LoginController {
     @FXML
     public void loadRegister(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("SignUp.fxml"));
+        loader.setLocation(getClass().getResource("fxml/SignUp.fxml"));
         Parent content = loader.load();
         loginPane.getChildren().setAll(content);
     }
