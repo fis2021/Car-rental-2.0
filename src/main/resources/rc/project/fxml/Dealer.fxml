@@ -28,7 +28,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Button>
-                        <Button fx:id="addCars" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Add Cars" textFill="WHITE">
+                        <Button fx:id="addCars" mnemonicParsing="false" onAction="#loadAddCars" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Add Cars" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
@@ -56,7 +56,7 @@
                   </HBox>
                </children>
             </Pane>
-            <AnchorPane layoutX="20.0" layoutY="100.0" prefHeight="600.0" prefWidth="1040.0">
+            <AnchorPane fx:id="changeMeDealer" layoutX="20.0" layoutY="100.0" prefHeight="600.0" prefWidth="1040.0">
                <children>
                   <Pane prefHeight="600.0" prefWidth="1040.0">
                      <children>
