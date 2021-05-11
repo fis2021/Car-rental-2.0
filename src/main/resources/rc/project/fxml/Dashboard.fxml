@@ -89,6 +89,6 @@
    </children>
    <stylesheets>
       <URL value="@../css/buttonStyle.css" />
-      <URL value="@../css/Dashboard.css" />
+      <URL value="@../css/Display.css" />
    </stylesheets>
 </AnchorPane>
