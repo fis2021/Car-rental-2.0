@@ -1,65 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 
-<AnchorPane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #555555;" stylesheets="@../css/Dashboard.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.SignUpController">
-    <children>
-        <Pane onMouseReleased="#ageCounter" prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" styleClass="display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <children>
-                <Text fill="#e8e3e3" layoutX="282.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER REGISTRATION" textAlignment="CENTER">
-                    <font>
-                        <Font name="System Bold" size="27.0" />
-                    </font>
-                </Text>
-                <TextField fx:id="phoneTextField" layoutX="237.0" layoutY="385.0" prefHeight="25.0" prefWidth="336.0" promptText="phone number" />
-                <TextField fx:id="firstName" layoutX="237.0" layoutY="190.0" prefHeight="25.0" prefWidth="336.0" promptText="first name" />
-                <TextField fx:id="lastName" layoutX="237.0" layoutY="235.0" prefHeight="25.0" prefWidth="336.0" promptText="last name" />
-                <PasswordField fx:id="confirmPassword" layoutX="410.0" layoutY="461.0" prefHeight="25.0" prefWidth="163.0" promptText="confirm password" />
-                <PasswordField fx:id="passwordTextField" layoutX="237.0" layoutY="461.0" prefHeight="25.0" prefWidth="163.0" promptText="password" />
-                <Separator layoutY="81.0" prefHeight="3.0" prefWidth="840.0" />
-                <Separator layoutX="237.0" layoutY="304.0" prefHeight="3.0" prefWidth="336.0" />
-                <Button fx:id="signUp" layoutX="308.0" layoutY="523.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="36.0" prefWidth="193.0" styleClass="record-sales" stylesheets="@../css/buttonStyle.css" text="Sign up" />
-                  <TextField fx:id="emailTextField" layoutX="237.0" layoutY="345.0" prefHeight="25.0" prefWidth="336.0" promptText="example@email.com" />
-                  <DatePicker fx:id="dateOfBirth" layoutX="324.0" layoutY="272.0" prefHeight="25.0" prefWidth="163.0" promptText="mm/dd/yyyy" />
-            <Label layoutX="387.0" layoutY="161.0" text="Name" textFill="#e8e3e3">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="370.0" layoutY="309.0" text="Contact Info" textFill="#e8e3e3">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="377.0" layoutY="430.0" text="Password" textFill="#e8e3e3">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Separator layoutX="236.0" layoutY="178.0" prefHeight="3.0" prefWidth="336.0" />
-            <Label fx:id="confirmPasswordLabel" layoutX="323.0" layoutY="494.0" prefHeight="17.0" prefWidth="163.0" textAlignment="JUSTIFY" textFill="#da3f3f">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            </children>
-        </Pane>
-      <Separator layoutX="237.0" layoutY="332.0" prefHeight="3.0" prefWidth="336.0" />
-      <Separator layoutX="237.0" layoutY="419.0" prefHeight="3.0" prefWidth="336.0" />
-      <Separator layoutX="238.0" layoutY="453.0" prefHeight="3.0" prefWidth="336.0" />
-      <Label fx:id="registrationMessage" layoutX="328.0" layoutY="111.0" prefHeight="17.0" prefWidth="163.0" textAlignment="JUSTIFY" textFill="#4889dd">
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="528.0" prefWidth="765.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.SignUpController">
+   <children>
+      <ImageView fitHeight="140.0" fitWidth="197.0" layoutX="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+<!--            <Image url="@../images/car.png" />-->
+         </image>
+      </ImageView>
+
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="225.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="225.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="225.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+<!--            <Image url="@../images/iconfinder_icons_password_1564520.png" />-->
+         </image>
+      </ImageView>
+
+      <Label layoutX="330.0" layoutY="147.0" prefHeight="27.0" prefWidth="67.0" text="Rent a" textFill="#5bb4cd">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-    </children>
+      <Label layoutX="390.0" layoutY="147.0" prefHeight="27.0" prefWidth="30.0" text="Car" textFill="#a2b1b5">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="262.0" layoutY="195.0" prefHeight="25.0" prefWidth="113.0" promptText="First Name" style="-fx-background-color: #787880;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="390.0" layoutY="195.0" prefHeight="25.0" prefWidth="113.0" promptText="Last Name" style="-fx-background-color: #787880;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="261.0" layoutY="263.0" prefHeight="30.0" prefWidth="243.0" promptText="exemple@exemple.com" style="-fx-background-color: #787880;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <PasswordField layoutX="262.0" layoutY="325.0" prefHeight="30.0" prefWidth="243.0" promptText="Passowrd" style="-fx-background-color: #787880;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+   </children>
 </AnchorPane>

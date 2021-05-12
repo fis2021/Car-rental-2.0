@@ -179,7 +179,7 @@ public class Browse implements Initializable {
                 GridPane.setMargin(anchorPane, new Insets(11));
             }
         } catch(IOException e){
-            e.printStackTrace();
+                e.printStackTrace();
         }
     }
 }
