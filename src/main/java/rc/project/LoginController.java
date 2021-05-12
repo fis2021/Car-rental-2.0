@@ -4,6 +4,7 @@ package rc.project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -11,6 +12,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Objects;
 // Login button
 // Forget Password button
@@ -31,30 +35,59 @@ public class LoginController {
     private Button login;
 
     @FXML
-    private Button forgetPassword;
+    private Button register;
 
     @FXML
     private AnchorPane loginPane;
 
     @FXML
     public void loginButtonAction(){
+        loginMessage.setVisible(false);
+
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username == null || username.isEmpty()) {
-            loginMessage.setText("Please type in a username!");
-            return;
-        }
+       if(!username.isBlank() && !password.isBlank()){
+           validateLogin();
+       } else {
+           loginMessage.setText("Please enter username and password.");
+           loginMessage.setVisible(true);
+       }
+    }
 
-        if (password == null || password.isEmpty()) {
-            loginMessage.setText("Password cannot be empty");
-            return;
+    public void validateLogin(){
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String verifyLogin = "SELECT count(1) FROM users WHERE email = '" + usernameField.getText() + "' AND password = '" + passwordField.getText() + "'";
+
+        try{
+
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(verifyLogin);
+
+            while(queryResult.next()){
+                if(queryResult.getInt(1) == 1){
+                    loginMessage.setText("Congrats!");
+                    loginMessage.setVisible(true);
+                } else {
+                    loginMessage.setText("Invalid login. Please try again.");
+                    loginMessage.setVisible(true);
+                }
+
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
         }
     }
 
     @FXML
     public void loadRegister(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("../../../../resources/SignUp.fxml")));
-        loginPane.getChildren().setAll(pane);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/SignUp.fxml"));
+        Parent content = loader.load();
+        loginPane.getChildren().setAll(content);
     }
 }
