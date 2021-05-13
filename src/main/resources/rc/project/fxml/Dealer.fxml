@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #555555;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.Dealer">
+   <children>
+      <Pane prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #333333;">
+         <children>
+            <Pane layoutX="110.0" layoutY="20.0" prefHeight="60.0" prefWidth="860.0" style="-fx-background-color: #555555;" styleClass="vbox">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="860.0">
+                     <children>
+                        <Button fx:id="editCars" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Edit Cars" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addCars" mnemonicParsing="false" onAction="#loadAddCars" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Add Cars" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="seeOrder" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="See Orders" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="seeReviews" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="See Reviews" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="login" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Login" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </Pane>
+            <AnchorPane fx:id="changeMeDealer" layoutX="20.0" layoutY="100.0" prefHeight="600.0" prefWidth="1040.0">
+               <children>
+                  <Pane prefHeight="600.0" prefWidth="1040.0">
+                     <children>
+                        <Text fill="WHITE" layoutX="460.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome !">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="194.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have admin access" x="250.0" y="15.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5" x="435.0" y="100.0">
+                           <image>
+                              <Image url="@../icons/old-car(2).png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <styleClass>
+                        <String fx:value="vbox" />
+                        <String fx:value="gradient" />
+                     </styleClass>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+   <stylesheets>
+      <URL value="@../css/Display.css" />
+      <URL value="@../css/buttonStyle.css" />
+   </stylesheets>
+</AnchorPane>

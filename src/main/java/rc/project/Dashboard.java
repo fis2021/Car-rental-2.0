@@ -62,7 +62,7 @@ public class Dashboard {
     @FXML
     public void loadStatus(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("fxml/HomePage.fxml"));
+        loader.setLocation(getClass().getResource("fxml/Status.fxml"));
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
     }
@@ -76,10 +76,12 @@ public class Dashboard {
     }
 
     @FXML
-    public void loadHome(ActionEvent event) throws IOException {
+    public void loadContact(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("fxml/HomePage.fxml"));
+        loader.setLocation(getClass().getResource("fxml/Contact.fxml"));
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
     }
+
+
 }

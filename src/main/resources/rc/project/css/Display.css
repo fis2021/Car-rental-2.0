@@ -1,0 +1,19 @@
+.vbox {
+    -fx-background-radius: 30px 30px 30px 30px;
+}
+.display {
+    -fx-background-radius: 30px 30px 30px 30px;
+}
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.gradient {
+    -fx-background-color: radial-gradient(center 50% 50% , radius 70% ,	#1FB480, #555555);
+}
+
+.gradient1 {
+    -fx-background-color: radial-gradient(center 50% 50% , radius 70% , #189ab4, #555555);
+}
+
+

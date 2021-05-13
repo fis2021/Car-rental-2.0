@@ -51,7 +51,7 @@
                      <font>
                      <Font name="System Bold" size="15.0" />
                   </font></Button>
-                  <Button fx:id="contactButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Contact" textFill="WHITE">
+                  <Button fx:id="contactButton" mnemonicParsing="false" onAction="#loadContact" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Contact" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" top="10.0" />
                      </VBox.margin>
@@ -92,6 +92,6 @@
    </children>
    <stylesheets>
       <URL value="@../css/buttonStyle.css" />
-      <URL value="@../css/Dashboard.css" />
+      <URL value="@../css/Display.css" />
    </stylesheets>
 </AnchorPane>
