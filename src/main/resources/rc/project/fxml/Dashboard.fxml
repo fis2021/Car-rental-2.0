@@ -14,11 +14,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="dashboardPane" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #555555;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.Dashboard">
+<AnchorPane fx:id="dashboardPane" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.Dashboard">
    <children>
       <AnchorPane fx:id="dashboard" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="CENTER" layoutX="-7.0" layoutY="29.0" maxHeight="350.0" maxWidth="180.0" prefHeight="333.0" prefWidth="180.0" style="-fx-background-color: #333333;" styleClass="vbox" AnchorPane.bottomAnchor="367.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+            <VBox alignment="CENTER" layoutX="-7.0" layoutY="29.0" maxHeight="350.0" maxWidth="180.0" prefHeight="333.0" prefWidth="180.0" style="-fx-background-color: #555555;" styleClass="vbox" AnchorPane.bottomAnchor="367.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
                <children>
                   <Button fx:id="logo" alignment="CENTER" mnemonicParsing="false" onAction="#loadHome" scaleX="1.4" scaleY="1.4" style="-fx-background-color: transparent;" translateY="20.0">
                      <graphic>
@@ -67,18 +67,18 @@
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="stangaJos" layoutY="374.0" prefHeight="326.0" prefWidth="180.0" style="-fx-background-color: #333333;" styleClass="vbox" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="374.0">
+      <AnchorPane fx:id="stangaJos" layoutY="374.0" prefHeight="326.0" prefWidth="180.0" style="-fx-background-color: #555555;" styleClass="vbox" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="374.0">
          <children>
             <Pane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label fx:id="stangaLabel" layoutX="76.0" layoutY="155.0" text="proba" textFill="WHITE" />
                </children></Pane>
          </children></AnchorPane>
-      <AnchorPane fx:id="display" style="-fx-background-color: #555555;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="display" style="-fx-background-color: #333333;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="changeMe" prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #555555;" stylesheets="@../css/Display.css" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+            <AnchorPane fx:id="changeMe" prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" stylesheets="@../css/Display.css" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
                <children>
-                  <Pane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" styleClass="display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Pane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #555555;" styleClass="display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Text fill="WHITE" layoutX="360.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome !">
                            <font>
