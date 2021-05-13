@@ -57,7 +57,7 @@ public class LoginController {
                loginPane.getChildren().setAll(content);
            }
        } else {
-           loginMessage.setText("Please enter username and password.");
+           loginMessage.setText("Please enter the username and password.");
            loginMessage.setVisible(true);
        }
     }
