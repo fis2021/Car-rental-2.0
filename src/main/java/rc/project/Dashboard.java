@@ -56,7 +56,7 @@ public class Dashboard {
     @FXML
     public void loadStatus(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("fxml/deModificat.fxml"));
+        loader.setLocation(getClass().getResource("fxml/Status.fxml"));
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
     }
@@ -68,5 +68,14 @@ public class Dashboard {
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
     }
+
+    @FXML
+    public void loadContact(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/Contact.fxml"));
+        Parent content = loader.load();
+        changeMe.getChildren().setAll(content);
+    }
+
 
 }
