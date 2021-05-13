@@ -40,8 +40,9 @@ public class LoginController {
     @FXML
     private AnchorPane loginPane;
 
+    private int okay = 0;
     @FXML
-    public void loginButtonAction(){
+    public void loginButtonAction(ActionEvent event) throws IOException {
         loginMessage.setVisible(false);
 
         String username = usernameField.getText();
@@ -49,12 +50,19 @@ public class LoginController {
 
        if(!username.isBlank() && !password.isBlank()){
            validateLogin();
+           if(okay == 1) {
+               FXMLLoader loader = new FXMLLoader();
+               loader.setLocation(getClass().getResource("fxml/Dashboard.fxml"));
+               Parent content = loader.load();
+               loginPane.getChildren().setAll(content);
+           }
        } else {
            loginMessage.setText("Please enter username and password.");
            loginMessage.setVisible(true);
        }
     }
 
+    //@FXML
     public void validateLogin(){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
@@ -65,16 +73,16 @@ public class LoginController {
 
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
-
+            int n = 0;
             while(queryResult.next()){
                 if(queryResult.getInt(1) == 1){
+                    okay = 1;
                     loginMessage.setText("Congrats!");
                     loginMessage.setVisible(true);
                 } else {
                     loginMessage.setText("Invalid login. Please try again.");
                     loginMessage.setVisible(true);
                 }
-
             }
 
         } catch (Exception e){
