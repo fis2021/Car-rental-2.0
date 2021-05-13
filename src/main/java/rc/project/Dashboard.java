@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Dashboard {
+public class Dashboard implements Initializable{
 
     @FXML
     private AnchorPane dashboardPane;
@@ -83,5 +83,25 @@ public class Dashboard {
         changeMe.getChildren().setAll(content);
     }
 
+    @FXML
+    public void loadHome(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/HomePage.fxml"));
+        Parent content = loader.load();
+        changeMe.getChildren().setAll(content);
+    }
 
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/HomePage.fxml"));
+        Parent content = null;
+        try {
+            content = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        changeMe.getChildren().setAll(content);
+    }
 }
