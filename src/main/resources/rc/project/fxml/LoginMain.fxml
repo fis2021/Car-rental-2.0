@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="loginPane" prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #555555;" stylesheets="@../css/Dashboard.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.LoginController">
+<AnchorPane fx:id="loginPane" prefHeight="660.0" prefWidth="850.0" style="-fx-background-color: #414361;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.LoginController">
    <children>
       <Pane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" styleClass="display" stylesheets="@../css/buttonStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

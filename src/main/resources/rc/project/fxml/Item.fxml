@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="itemAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: #333333;" stylesheets="@../css/buttonStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.Item">
    <children>
-      <Pane fx:id="pane" prefHeight="250.0" prefWidth="250.0" styleClass="display" stylesheets="@../css/Dashboard.css">
+      <Pane fx:id="pane" prefHeight="250.0" prefWidth="250.0" styleClass="display" stylesheets="@../css/Display.css">
          <children>
             <Label fx:id="itemText" alignment="CENTER" prefWidth="250.0" text="Car Name" textAlignment="CENTER" textFill="WHITE">
                <font>
