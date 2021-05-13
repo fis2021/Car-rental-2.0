@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,46 +10,54 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="loginPane" prefHeight="660.0" prefWidth="850.0" style="-fx-background-color: #414361;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.LoginController">
+<AnchorPane fx:id="loginPane" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #333333;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.LoginController">
    <children>
-      <Pane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" styleClass="display" stylesheets="@../css/buttonStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane prefHeight="720.0" prefWidth="770.0" style="-fx-background-color: #333333;" styleClass="display" stylesheets="@../css/buttonStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane layoutX="193.0" layoutY="136.0" prefHeight="408.0" prefWidth="440.0">
+            <Pane layoutX="300.0" layoutY="100.0" prefHeight="500.0" prefWidth="480.0" style="-fx-background-color: #333333;">
                <children>
-                  <Button fx:id="login" layoutX="192.0" layoutY="212.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="40.0" prefWidth="97.0" styleClass="record-sales" text="Login">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font></Button>
-                  <TextField fx:id="usernameField" layoutX="157.0" layoutY="105.0" prefHeight="32.0" prefWidth="169.0" promptText="username" />
-                  <PasswordField fx:id="passwordField" layoutX="157.0" layoutY="162.0" prefHeight="32.0" prefWidth="169.0" promptText="password" />
-                  <ImageView fitHeight="44.0" fitWidth="38.0" layoutX="100.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/user.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="99.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/password.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="#e8e3e3" layoutX="118.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MEMBER LOGIN" textAlignment="CENTER" wrappingWidth="246.13671875">
-                     <font>
-                        <Font name="System Bold" size="27.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="register" layoutX="177.0" layoutY="328.0" mnemonicParsing="false" onAction="#loadRegister" prefHeight="40.0" prefWidth="128.0" styleClass="record-sales" text="REGISTER NOW">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Button>
-                  <Text fill="#e8e3e3" layoutX="129.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are not a member ?">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
-                  <Separator layoutX="118.0" layoutY="62.0" prefHeight="2.0" prefWidth="246.0" />
-                  <Separator layoutX="130.0" layoutY="319.0" prefHeight="3.0" prefWidth="224.0" />
-                  <Text fx:id="loginMessage" fill="#eeecec" layoutX="138.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="223.8671875" />
+                  <Pane prefHeight="500.0" prefWidth="480.0" style="-fx-background-color: #555555;" styleClass="vbox">
+                     <children>
+                        <Button fx:id="login" layoutX="190.0" layoutY="313.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="40.0" prefWidth="97.0" styleClass="record-sales" text="Login">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="usernameField" layoutX="174.0" layoutY="216.0" prefHeight="32.0" prefWidth="169.0" promptText="username" />
+                        <PasswordField fx:id="passwordField" layoutX="174.0" layoutY="264.0" prefHeight="32.0" prefWidth="169.0" promptText="password" />
+                        <ImageView fitHeight="44.0" fitWidth="38.0" layoutX="128.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/user.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="128.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/password.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#e8e3e3" layoutX="116.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MEMBER LOGIN" textAlignment="CENTER" underline="true" wrappingWidth="246.13671875">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="register" layoutX="174.0" layoutY="424.0" mnemonicParsing="false" onAction="#loadRegister" prefHeight="40.0" prefWidth="128.0" styleClass="record-sales" text="REGISTER NOW">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Text fill="#e8e3e3" layoutX="144.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Still not a member ?" underline="true">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="loginMessage" fill="#eeecec" layoutX="126.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="223.8671875" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="164.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                           <image>
+                              <Image url="@../icons/old-car(2).png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </children>
