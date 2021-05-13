@@ -3,13 +3,20 @@ package rc.project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
+
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class Dashboard {
 
@@ -23,13 +30,13 @@ public class Dashboard {
     private Button browseButton;
 
     @FXML
-    private ImageView logo;
+    private Button logo;
 
     @FXML
     private AnchorPane display;
 
     @FXML
-    private AnchorPane changeMe;
+    protected AnchorPane changeMe;
 
     @FXML
     private AnchorPane stangaJos;
@@ -77,5 +84,12 @@ public class Dashboard {
         changeMe.getChildren().setAll(content);
     }
 
+    @FXML
+    public void loadHome(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/Dashboard.fxml"));
+        Parent content = loader.load();
+        dashboardPane.getChildren().setAll(content);
+    }
 
 }

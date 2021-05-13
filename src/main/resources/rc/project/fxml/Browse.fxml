@@ -7,15 +7,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #555555;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.Browse">
+<AnchorPane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.Browse">
    <children>
-      <Pane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" styleClass="display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #555555;" styleClass="display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox fx:id="hBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="660.0" prefWidth="820.0">
                <children>
-                  <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="660.0" prefWidth="820.0" style="-fx-background-color: #333333;" vbarPolicy="NEVER">
+                  <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="660.0" prefWidth="820.0" style="-fx-background-color: #555555;" vbarPolicy="NEVER">
                      <content>
-                        <GridPane fx:id="gridPane" prefHeight="0.0" prefWidth="0.0">
+                        <GridPane fx:id="gridPane" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0">
                            <rowConstraints>
                               <RowConstraints minHeight="0.0" />
                            </rowConstraints>

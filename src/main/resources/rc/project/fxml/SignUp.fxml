@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -11,55 +12,70 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #555555;" stylesheets="@../css/Dashboard.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.SignUpController">
+<AnchorPane fx:id="changeMe" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #333333;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.SignUpController">
     <children>
         <Pane onMouseReleased="#ageCounter" prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" styleClass="display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Text fill="#e8e3e3" layoutX="282.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER REGISTRATION" textAlignment="CENTER">
-                    <font>
-                        <Font name="System Bold" size="27.0" />
-                    </font>
-                </Text>
-                <TextField fx:id="phoneTextField" layoutX="237.0" layoutY="385.0" prefHeight="25.0" prefWidth="336.0" promptText="phone number" />
-                <TextField fx:id="firstName" layoutX="237.0" layoutY="190.0" prefHeight="25.0" prefWidth="336.0" promptText="first name" />
-                <TextField fx:id="lastName" layoutX="237.0" layoutY="235.0" prefHeight="25.0" prefWidth="336.0" promptText="last name" />
-                <PasswordField fx:id="confirmPassword" layoutX="410.0" layoutY="461.0" prefHeight="25.0" prefWidth="163.0" promptText="confirm password" />
-                <PasswordField fx:id="passwordTextField" layoutX="237.0" layoutY="461.0" prefHeight="25.0" prefWidth="163.0" promptText="password" />
-                <Separator layoutY="81.0" prefHeight="3.0" prefWidth="840.0" />
-                <Separator layoutX="237.0" layoutY="304.0" prefHeight="3.0" prefWidth="336.0" />
-                <Button fx:id="signUp" layoutX="308.0" layoutY="523.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="36.0" prefWidth="193.0" styleClass="record-sales" stylesheets="@../css/buttonStyle.css" text="Sign up" />
-                  <TextField fx:id="emailTextField" layoutX="237.0" layoutY="345.0" prefHeight="25.0" prefWidth="336.0" promptText="example@email.com" />
-                  <DatePicker fx:id="dateOfBirth" layoutX="324.0" layoutY="272.0" prefHeight="25.0" prefWidth="163.0" promptText="mm/dd/yyyy" />
-            <Label layoutX="387.0" layoutY="161.0" text="Name" textFill="#e8e3e3">
+            <Pane layoutX="300.0" layoutY="100.0" prefHeight="500.0" prefWidth="480.0" style="-fx-background-color: #555555;" styleClass="vbox">
+               <children>
+                  <Button fx:id="returnToLogin" layoutX="75.0" layoutY="425.0" mnemonicParsing="false" onAction="#returnToLogin" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" stylesheets="@../css/buttonStyle.css" text="Return to Login" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                      <Button fx:id="signUp" layoutX="275.0" layoutY="425.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" stylesheets="@../css/buttonStyle.css" text="Sign up" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets right="70.0" />
+                     </padding>
+                  </Button>
+                      <PasswordField fx:id="confirmPassword" layoutX="250.0" layoutY="362.0" prefHeight="25.0" prefWidth="163.0" promptText="confirm password" />
+                  <Label fx:id="confirmPasswordLabel" alignment="CENTER" layoutX="158.0" layoutY="399.0" prefHeight="17.0" prefWidth="163.0" textAlignment="CENTER" textFill="#da3f3f">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                      <PasswordField fx:id="passwordTextField" layoutX="75.0" layoutY="362.0" prefHeight="25.0" prefWidth="163.0" promptText="password" />
+               </children>
+            </Pane>
+                <TextField fx:id="phoneTextField" layoutX="375.0" layoutY="385.0" prefHeight="25.0" prefWidth="336.0" promptText="phone number" />
+                <TextField fx:id="firstName" layoutX="375.0" layoutY="180.0" prefHeight="25.0" prefWidth="336.0" promptText="first name" />
+                <TextField fx:id="lastName" layoutX="375.0" layoutY="220.0" prefHeight="25.0" prefWidth="336.0" promptText="last name" />
+                <Separator layoutX="370.0" layoutY="304.0" prefHeight="3.0" prefWidth="345.0" />
+                  <TextField fx:id="emailTextField" layoutX="375.0" layoutY="345.0" prefHeight="25.0" prefWidth="336.0" promptText="example@email.com" />
+                  <DatePicker fx:id="dateOfBirth" layoutX="375.0" layoutY="260.0" prefHeight="25.0" prefWidth="163.0" promptText="mm/dd/yyyy" />
+            <Label layoutX="375.0" layoutY="150.0" text="Name" textFill="#e8e3e3">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="370.0" layoutY="309.0" text="Contact Info" textFill="#e8e3e3">
+            <Label layoutX="375.0" layoutY="309.0" text="Contact Info" textFill="#e8e3e3">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="377.0" layoutY="430.0" text="Password" textFill="#e8e3e3">
+            <Label layoutX="375.0" layoutY="430.0" text="Password" textFill="#e8e3e3">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Separator layoutX="236.0" layoutY="178.0" prefHeight="3.0" prefWidth="336.0" />
-            <Label fx:id="confirmPasswordLabel" layoutX="323.0" layoutY="494.0" prefHeight="17.0" prefWidth="163.0" textAlignment="JUSTIFY" textFill="#da3f3f">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
+            <Separator layoutX="370.0" layoutY="170.0" prefHeight="3.0" prefWidth="345.0" />
             </children>
         </Pane>
-      <Separator layoutX="237.0" layoutY="332.0" prefHeight="3.0" prefWidth="336.0" />
-      <Separator layoutX="237.0" layoutY="419.0" prefHeight="3.0" prefWidth="336.0" />
-      <Separator layoutX="238.0" layoutY="453.0" prefHeight="3.0" prefWidth="336.0" />
-      <Label fx:id="registrationMessage" layoutX="328.0" layoutY="111.0" prefHeight="17.0" prefWidth="163.0" textAlignment="JUSTIFY" textFill="#4889dd">
+      <Separator layoutX="370.0" layoutY="332.0" prefHeight="3.0" prefWidth="345.0" />
+      <Separator layoutX="370.0" layoutY="419.0" prefHeight="3.0" prefWidth="345.0" />
+      <Separator layoutX="370.0" layoutY="453.0" prefHeight="3.0" prefWidth="345.0" />
+      <Label fx:id="registrationMessage" layoutX="400.0" layoutY="111.0" prefHeight="17.0" prefWidth="163.0" textAlignment="JUSTIFY" textFill="#4889dd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
+          <Text fill="#e8e3e3" layoutX="411.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER REGISTRATION" textAlignment="CENTER" underline="true">
+              <font>
+                  <Font name="System Bold" size="27.0" />
+              </font>
+          </Text>
     </children>
 </AnchorPane>

@@ -1,10 +1,15 @@
 package rc.project;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -19,6 +24,11 @@ import java.util.ResourceBundle;
 
 public class SignUpController implements Initializable {
 
+    @FXML
+    private Button returnToLogin;
+
+    @FXML
+    private AnchorPane changeMe;
 
     @FXML
     private TextField firstName;
@@ -79,7 +89,6 @@ public class SignUpController implements Initializable {
         if (passwordTextField.getText().equals(confirmPassword.getText())) {
             registerUser();
 
-
         } else {
             confirmPasswordLabel.setText("Password does not match.");
         }
@@ -114,6 +123,14 @@ public class SignUpController implements Initializable {
             e.getCause();
         }
 
+    }
+
+    @FXML
+    public void returnToLogin(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/LoginMain.fxml"));
+        Parent content = loader.load();
+        changeMe.getChildren().setAll(content);
     }
 
 
