@@ -29,7 +29,6 @@ public class Browse implements Initializable {
     private GridPane gridPane;
 
     private List<Car> cars = new ArrayList<>();
-    private Image image;
 
     private List<Car> getData() {
         List<Car> cars = new ArrayList<>();
@@ -146,7 +145,6 @@ public class Browse implements Initializable {
         return cars;
     }
 
-    @Override
     public void initialize(URL location, ResourceBundle resources) {
         cars.addAll(getData());
         int column = 0;
