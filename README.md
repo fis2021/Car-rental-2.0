@@ -21,7 +21,7 @@ The purpose of this application is to help a client rent a car by showcasing a l
 - A customer can navigate to the home page where he will see the best offers.
 
 - A customer can also browse and discover all available cars.
-  Each service comes with a set of photos and a unique description (for some cars the plus service is included in the price).
+  Each service comes with a set of photos and a unique description.
   
 - They can apply for rental in advance and see the status of their request (accepted, declined or pending).
 
