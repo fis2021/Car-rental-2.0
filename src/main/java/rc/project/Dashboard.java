@@ -129,9 +129,10 @@ public class Dashboard implements Initializable {
     @FXML
     public void loadAccount(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("fxml/LoginMain.fxml"));
+        loader.setLocation(getClass().getResource("fxml/Account.fxml"));
         Parent content = loader.load();
         changeMe.getChildren().setAll(content);
+
     }
 
     @FXML
@@ -146,6 +147,13 @@ public class Dashboard implements Initializable {
     public void loadHome(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("fxml/Dashboard.fxml"));
+        Parent content = loader.load();
+        dashboardPane.getChildren().setAll(content);
+    }
+    @FXML
+    void signOutOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/LoginMain.fxml"));
         Parent content = loader.load();
         dashboardPane.getChildren().setAll(content);
     }

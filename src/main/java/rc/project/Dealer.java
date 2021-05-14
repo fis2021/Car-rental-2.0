@@ -10,6 +10,8 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 public class Dealer {
+    @FXML
+    private AnchorPane anchorPane;
 
     @FXML
     private Button editCars;
@@ -35,6 +37,15 @@ public class Dealer {
         loader.setLocation(getClass().getResource("fxml/AddCarsPage.fxml"));
         Parent content = loader.load();
         changeMeDealer.getChildren().setAll(content);
+    }
+
+    @FXML
+    public void signOutOnAction(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/LoginMain.fxml"));
+        Parent content = loader.load();
+        anchorPane.getChildren().setAll(content);
+
     }
 
 }
