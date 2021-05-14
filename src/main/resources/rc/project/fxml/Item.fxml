@@ -28,7 +28,10 @@
                   <Insets top="30.0" />
                </padding>
             </Label>
-            <Label fx:id="detailsLabel" alignment="CENTER" layoutY="50.0" prefHeight="150.0" prefWidth="250.0" text="label descriere" textFill="WHITE" />
+            <Label fx:id="detailsLabel" alignment="CENTER" layoutY="50.0" prefHeight="150.0" prefWidth="250.0" text="label descriere" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
             <VBox alignment="CENTER" layoutY="50.0" prefHeight="140.0" prefWidth="250.0" styleClass="vbox">
                <children>
                   <ImageView fx:id="itemPhoto" fitHeight="140.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">

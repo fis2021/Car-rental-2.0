@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #333333;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.ContactController">
+<AnchorPane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: transparent;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.ContactController">
     <children>
         <Pane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: #555555;" styleClass="display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="getHelpButton" layoutX="115.0" layoutY="514.0" mnemonicParsing="false" onAction="#getHelpAction" styleClass="record-sales" stylesheets="@../css/buttonStyle.css" text="SEND">
+            <Button fx:id="getHelpButton" layoutX="115.0" layoutY="514.0" mnemonicParsing="false" onAction="#getHelpAction" styleClass="record-sales" stylesheets="@../css/buttonStyle.css" text="SEND" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

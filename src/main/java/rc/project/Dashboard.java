@@ -48,30 +48,30 @@ public class Dashboard implements Initializable {
         Car car;
 
         car = new Car();
-        car.setName("Mercedes");
-        car.setPrice(40);
+        car.setName("Mercedes Benz 300se");
+        car.setPrice(180);
         car.setImgSrc("masini/mercedes1.png");
-        car.setDetails("masina 3");
+        car.setDetails("- Made in 1978\n- 2 seats");
         car.setColor1("8896A0");
         car.setColor2("31444A");
         cars.add(car);
 
         car = new Car();
-        car.setName("1");
-        car.setPrice(40);
+        car.setName("Volkswagen Karmann Ghia");
+        car.setPrice(170);
         car.setImgSrc("masini/volkswagen-3754571_640.png");
-        car.setDetails("masina 3");
+        car.setDetails("-Made in 1969\n- Isolated or convertible\n- 2 seats");
         car.setColor1("A5FE83");
         car.setColor2("02A08E");
         cars.add(car);
 
         car = new Car();
-        car.setName("6");
-        car.setPrice(40);
-        car.setImgSrc("masini/bmw-500-4344066_640.png");
-        car.setDetails("masina 3");
-        car.setColor1("004A53");
-        car.setColor2("1BA8FE");
+        car.setName("Volkswagen Bus T1");
+        car.setPrice(230);
+        car.setImgSrc("masini/vw-4309412_640.png");
+        car.setDetails("- Designed for the perfect\n  camping experience\n- 9 seats");
+        car.setColor1("019F8E");
+        car.setColor2("2A52A4");
         cars.add(car);
 
         return cars;
