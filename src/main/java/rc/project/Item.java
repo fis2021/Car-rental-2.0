@@ -14,7 +14,7 @@ import javafx.scene.layout.Pane;
 import java.io.IOException;
 import java.text.BreakIterator;
 
-public class Item extends Dashboard {
+public class Item {
 
     @FXML
     private Label itemText;
