@@ -100,7 +100,6 @@ public class SignUpController implements Initializable {
         Connection connectDB = connectNow.getConnection();
         System.out.println("DB Connected.");
 
-
         String firstname = firstName.getText();
         String lastname = lastName.getText();
         String email = emailTextField.getText();
