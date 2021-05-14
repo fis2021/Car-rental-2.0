@@ -17,7 +17,7 @@ public class App extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("fxml/LoginMain.fxml"));
+        loader.setLocation(getClass().getResource("fxml/Dashboard.fxml"));
         Parent content = loader.load();
 
         Scene scene_main = new Scene(content, 1080, 720);
