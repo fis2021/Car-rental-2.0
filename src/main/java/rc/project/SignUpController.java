@@ -107,8 +107,8 @@ public class SignUpController implements Initializable {
         String phone = phoneTextField.getText();
         int age = ageCounter();
 
-        String insertFields = "INSERT INTO users (firstname, lastname, email, password, phone, age) VALUES ('";
-        String insertValues = firstname + "','" + lastname + "','" + email + "','" + password + "','" + phone + "','" + age + "')";
+        String insertFields = "INSERT INTO users (firstname, lastname, email, password, phone, age, role) VALUES ('";
+        String insertValues = firstname + "','" + lastname + "','" + email + "','" + password + "','" + phone + "','" + age + "','user')";
         String insertRegister = insertFields + insertValues;
 
         try{

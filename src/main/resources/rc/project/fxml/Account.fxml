@@ -3,6 +3,7 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -38,7 +39,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Button fx:id="signOut" layoutX="350.0" layoutY="574.0" mnemonicParsing="false" onAction="#signOutOnAction" prefHeight="40.0" prefWidth="140.0" styleClass="record-sales" text="Sign out" textFill="WHITE">
+            <Button fx:id="changePassword" layoutX="339.0" layoutY="545.0" mnemonicParsing="false" onAction="#changePasswordAction" prefHeight="44.0" prefWidth="159.0" styleClass="record-sales" text="Change password" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -51,6 +52,29 @@
             <Text fx:id="phone" layoutX="235.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="271.13671875">
                <font>
                   <Font size="15.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="currentPassword" layoutX="428.0" layoutY="400.0" />
+            <PasswordField fx:id="newPassword" layoutX="428.0" layoutY="441.0" />
+            <PasswordField fx:id="confirmNewPassword" layoutX="428.0" layoutY="480.0" />
+            <Label layoutX="244.0" layoutY="402.0" prefHeight="21.0" prefWidth="130.0" text="Current password:" textFill="#ebebeb">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="244.0" layoutY="443.0" prefHeight="21.0" prefWidth="130.0" text="New password:" textFill="#ebebeb">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="244.0" layoutY="482.0" prefHeight="21.0" prefWidth="166.0" text="Confirm new password:" textFill="#ebebeb">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Text fx:id="invalidChange" fill="RED" layoutX="284.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="271.13671875">
+               <font>
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Text>
             </children>

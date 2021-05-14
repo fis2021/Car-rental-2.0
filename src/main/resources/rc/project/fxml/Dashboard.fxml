@@ -64,6 +64,15 @@
 
                </children>
             </VBox>
+            <Button fx:id="logo1" alignment="CENTER" layoutX="75.0" layoutY="650.0" mnemonicParsing="false" onAction="#signOutOnAction" prefHeight="35.0" prefWidth="32.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/logOut.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="display" style="-fx-background-color: #333333;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

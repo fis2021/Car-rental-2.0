@@ -150,5 +150,12 @@ public class Dashboard implements Initializable {
         Parent content = loader.load();
         dashboardPane.getChildren().setAll(content);
     }
+    @FXML
+    void signOutOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/LoginMain.fxml"));
+        Parent content = loader.load();
+        dashboardPane.getChildren().setAll(content);
+    }
 
 }
