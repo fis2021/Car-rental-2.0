@@ -74,6 +74,5 @@ public class Item {
             this.itemDetails.setText("Details");
             ok=0;
         }
-
     }
 }
