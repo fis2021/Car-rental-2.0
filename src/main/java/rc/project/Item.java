@@ -94,10 +94,10 @@ public class Item {
             this.itemDetails.setText("Details");
             k = 1;
         }
-        if(i > 1 && (dateFrom.getValue() != null) && (dateTo.getValue() != null)) {
+        if((i > 1) && (dateFrom.getValue() != null) && (dateTo.getValue() != null)) {
             System.out.println("Confirm");
             this.warningLabel.setVisible(false);
-        } else if((dateFrom.getValue() == null) || (dateTo.getValue() == null)){
+        } else if((i > 1) && ((dateFrom.getValue() == null) || (dateTo.getValue() == null))){
             this.warningLabel.setVisible(true);
             this.warningLabel.setText("Please complete the dates");
         } else {
