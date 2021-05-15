@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.OrderStatus">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #444444;" styleClass="display">
+         <stylesheets>
+            <URL value="@../css/Display.css" />
+            <URL value="@../css/buttonStyle.css" />
+         </stylesheets>
+      </Pane>
+   </children>
+</AnchorPane>
