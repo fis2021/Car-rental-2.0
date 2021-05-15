@@ -21,7 +21,7 @@ public class Status implements Initializable {
         int column = 0;
         int row = 1;
         try {
-            for (int i = 0; i < 15; i++) {
+            for (int i = 0; i < 5; i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("fxml/OrderStatus.fxml"));
 
