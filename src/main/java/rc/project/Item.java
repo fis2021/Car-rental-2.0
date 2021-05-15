@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.text.BreakIterator;
@@ -40,6 +41,15 @@ public class Item {
     @FXML
     private Label detailsLabel;
 
+    @FXML
+    private VBox ordersVbox;
+
+    @FXML
+    private Label totalPrice;
+
+    @FXML
+    private Label priceText;
+
     private Car car;
 
     public void setData(Car car) {
@@ -53,18 +63,18 @@ public class Item {
         pane.setStyle("-fx-background-color: radial-gradient(center 50% 50% , radius 60% ,#" + car.getColor1() +", #" + car.getColor2() +");");
     }
 
-    private int ok=0;
+    private int k = 1, ok = 1;
     public void loadDetalii(ActionEvent event) throws IOException {
-        if(ok==0) {
+        if(k==1 && ok == 1) {
             this.itemPhoto.setVisible(false);
             this.itemOrder.setVisible(false);
             this.itemText.setVisible(false);
             this.itemPrice.setVisible(false);
             this.detailsLabel.setVisible(true);
             this.itemDetails.setText("Go back");
-            ok=1;
+            k++;
         }
-        else {
+        else if (k==2 && ok == 1) {
             this.itemPhoto.setVisible(true);
             this.itemDetails.setVisible(true);
             this.itemOrder.setVisible(true);
@@ -72,7 +82,44 @@ public class Item {
             this.itemPrice.setVisible(true);
             this.detailsLabel.setVisible(false);
             this.itemDetails.setText("Details");
-            ok=0;
+            k = 1;
         }
+    }
+
+    private int i = 1;
+    public void loadOrders(ActionEvent event) throws IOException {
+            if (i == 1) {
+                ok = 0;
+                this.itemPhoto.setVisible(false);
+                this.itemText.setVisible(false);
+                this.itemPrice.setVisible(false);
+                this.ordersVbox.setVisible(true);
+                this.itemOrder.setText("Show price");
+                this.itemDetails.setText("Confirm");
+                i++;
+            } else if (i == 2) {
+                this.itemPhoto.setVisible(false);
+                this.itemText.setVisible(false);
+                this.itemPrice.setVisible(false);
+                this.ordersVbox.setVisible(true);
+                this.itemOrder.setText("Go back");
+                this.itemDetails.setText("Confirm");
+                this.totalPrice.setVisible(true);
+                this.priceText.setVisible(true);
+                i++;
+            } else if (i == 3) {
+                this.ordersVbox.setVisible(false);
+                this.itemPhoto.setVisible(true);
+                this.itemDetails.setVisible(true);
+                this.itemOrder.setVisible(true);
+                this.itemText.setVisible(true);
+                this.itemPrice.setVisible(true);
+                this.totalPrice.setVisible(false);
+                this.priceText.setVisible(false);
+                this.itemOrder.setText("Order");
+                this.itemDetails.setText("Details");
+                ok = 1;
+                i = 1;
+            }
     }
 }

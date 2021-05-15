@@ -42,31 +42,7 @@
                   </ImageView>
                </children>
             </VBox>
-            <HBox layoutY="200.0" prefHeight="40.0" prefWidth="250.0">
-               <children>
-                  <Button fx:id="itemOrder" alignment="CENTER" mnemonicParsing="false" prefWidth="90.0" styleClass="record-sales" text="Order" textAlignment="CENTER" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="15.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="itemDetails" alignment="CENTER" mnemonicParsing="false" onAction="#loadDetalii" prefWidth="90.0" text="Details" textAlignment="CENTER" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="record-sales" />
-                        <String fx:value="strokeme" />
-                     </styleClass>
-                  </Button>
-               </children>
-            </HBox>
-            <VBox prefHeight="250.0" prefWidth="250.0" visible="false">
+            <VBox fx:id="ordersVbox" prefHeight="250.0" prefWidth="250.0" visible="false">
                <children>
                   <Label alignment="CENTER" prefWidth="250.0" text="Please select the dates" textFill="WHITE" translateY="20.0">
                      <font>
@@ -99,18 +75,42 @@
                         <DatePicker prefWidth="150.0" />
                      </children>
                   </HBox>
-                  <Label alignment="CENTER_RIGHT" prefWidth="125.0" text="Total price:" textFill="WHITE" translateX="20.0" translateY="80.0">
+                  <Label fx:id="totalPrice" alignment="CENTER_RIGHT" prefWidth="125.0" text="Total price:" textFill="WHITE" translateX="20.0" translateY="80.0" visible="false">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="22.0" prefWidth="56.0" text=" text" textFill="WHITE" translateX="145.0" translateY="59.0">
+                  <Label fx:id="priceText" prefHeight="22.0" prefWidth="56.0" text=" text" textFill="WHITE" translateX="145.0" translateY="59.0" visible="false">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
+            <HBox layoutY="200.0" prefHeight="40.0" prefWidth="250.0">
+               <children>
+                  <Button fx:id="itemOrder" alignment="CENTER" mnemonicParsing="false" onAction="#loadOrders" prefWidth="100.0" styleClass="record-sales" text="Order" textAlignment="CENTER" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="itemDetails" alignment="CENTER" mnemonicParsing="false" onAction="#loadDetalii" prefWidth="100.0" text="Details" textAlignment="CENTER" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="record-sales" />
+                        <String fx:value="strokeme" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </Pane>
    </children>
