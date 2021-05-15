@@ -45,7 +45,7 @@
                 <TextField fx:id="lastName" layoutX="375.0" layoutY="220.0" prefHeight="25.0" prefWidth="336.0" promptText="last name" />
                 <Separator layoutX="370.0" layoutY="304.0" prefHeight="3.0" prefWidth="345.0" />
                   <TextField fx:id="emailTextField" layoutX="375.0" layoutY="345.0" prefHeight="25.0" prefWidth="336.0" promptText="example@email.com" />
-                  <DatePicker fx:id="dateOfBirth" layoutX="375.0" layoutY="260.0" prefHeight="25.0" prefWidth="163.0" promptText="mm/dd/yyyy" />
+                  <DatePicker fx:id="dateOfBirth" layoutX="375.0" layoutY="260.0" prefHeight="25.0" prefWidth="163.0" promptText="dd/mm/yyyy" />
             <Label layoutX="375.0" layoutY="150.0" text="Name" textFill="#e8e3e3">
                <font>
                   <Font name="System Bold" size="12.0" />

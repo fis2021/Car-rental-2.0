@@ -8,16 +8,23 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.StringConverter;
 
+import javax.crypto.*;
+import javax.crypto.spec.IvParameterSpec;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -69,6 +76,25 @@ public class SignUpController implements Initializable {
         emailTextField.setStyle("-fx-text-inner-color: #a0a2ab;");
         phoneTextField.setStyle("-fx-text-inner-color: #a0a2ab;");
         dateOfBirth.setStyle("-fx-text-inner-color: #a0a2ab;");
+
+        dateOfBirth.setConverter(new StringConverter<LocalDate>() {
+            private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+            @Override
+            public String toString(LocalDate localDate) {
+                if (localDate == null)
+                    return "";
+                return dateTimeFormatter.format(localDate);
+            }
+
+            @Override
+            public LocalDate fromString(String dateString) {
+                if (dateString == null || dateString.trim().isEmpty()) {
+                    return null;
+                }
+                return LocalDate.parse(dateString, dateTimeFormatter);
+            }
+        });
     }
 
     @FXML
@@ -111,12 +137,12 @@ public class SignUpController implements Initializable {
         String insertValues = firstname + "','" + lastname + "','" + email + "','" + password + "','" + phone + "','" + age + "','user')";
         String insertRegister = insertFields + insertValues;
 
-        try{
+        try {
             Statement statement = connectDB.createStatement();
             statement.executeUpdate(insertRegister);
             registrationMessage.setText("User has been registered successfully!");
 
-        } catch (Exception e){
+        } catch (Exception e) {
             confirmPasswordLabel.setText("Email invalid!");
             e.printStackTrace();
             e.getCause();
