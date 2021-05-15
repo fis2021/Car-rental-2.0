@@ -122,11 +122,19 @@ public class Item {
             this.itemPrice.setVisible(false);
             this.ordersVbox.setVisible(true);
             this.warningLabel.setVisible(false);
-            this.itemOrder.setText("Go back");
-            this.itemDetails.setText("Confirm");
-            this.totalPrice.setVisible(true);
-            this.priceText.setVisible(true);
-            i++;
+            if((dateFrom.getValue() != null) && (dateTo.getValue() != null)) {
+                this.warningLabel.setVisible(false);
+                this.totalPrice.setVisible(true);
+                this.priceText.setVisible(true);
+                this.itemOrder.setText("Go back");
+                this.itemDetails.setText("Confirm");
+                i++;
+            } else if((dateFrom.getValue() == null) || (dateTo.getValue() == null)){
+                this.warningLabel.setVisible(true);
+                this.warningLabel.setText("Please complete the dates");
+            } else {
+                this.warningLabel.setVisible(false);
+            }
         } else if (i == 3) {
             this.ordersVbox.setVisible(false);
             this.itemPhoto.setVisible(true);
