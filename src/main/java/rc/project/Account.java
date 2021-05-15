@@ -101,6 +101,7 @@ public class Account implements Initializable {
             e.printStackTrace();
             e.getCause();
         }
+
     }
 
     private void updatePassword() {
