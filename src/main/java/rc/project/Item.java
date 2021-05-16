@@ -3,6 +3,7 @@ package rc.project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -12,11 +13,19 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.util.StringConverter;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.BreakIterator;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 
-public class Item {
+public class Item implements Initializable {
 
     @FXML
     private Label itemText;
@@ -62,6 +71,8 @@ public class Item {
 
     private Car car;
 
+    private String idUser = LoginController.id;
+
     public void setData(Car car) {
         detailsLabel.setVisible(false);
         this.car = car;
@@ -96,8 +107,40 @@ public class Item {
         }
         if((i > 1) && (dateFrom.getValue() != null) && (dateTo.getValue() != null)) {
             System.out.println("Confirm");
+            this.ordersVbox.setVisible(false);
+            this.itemPhoto.setVisible(true);
+            this.itemDetails.setVisible(true);
+            this.itemOrder.setVisible(true);
+            this.itemText.setVisible(true);
+            this.itemPrice.setVisible(true);
+            this.totalPrice.setVisible(false);
+            this.priceText.setVisible(false);
             this.warningLabel.setVisible(false);
-        } else if((i > 1) && ((dateFrom.getValue() == null) || (dateTo.getValue() == null))){
+            this.itemOrder.setText("Order");
+            this.itemDetails.setText("Details");
+            ok = 1;
+            i = 1;
+
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connectDB = connectNow.getConnection();
+            System.out.println("DB Connected.");
+
+            String carId = "1";
+            String status = "pending";
+
+            String insertFields = "INSERT INTO orders (userId, carId, status, dateFrom, dateTo ) VALUES ('";
+            String insertValues = idUser + "','" + carId + "','" + status + "','" + dateTo.getValue() + "','" + dateFrom.getValue() + "')";
+            String insertOrder = insertFields + insertValues;
+
+            try {
+                Statement statement = connectDB.createStatement();
+                statement.executeUpdate(insertOrder);
+
+            } catch(SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
+        } else if ((i > 1) && ((dateFrom.getValue() == null) || (dateTo.getValue() == null))) {
             this.warningLabel.setVisible(true);
             this.warningLabel.setText("Please complete the dates");
         } else {
@@ -150,5 +193,45 @@ public class Item {
             ok = 1;
             i = 1;
         }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        dateTo.setConverter(new StringConverter<LocalDate>() {
+            private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+            @Override
+            public String toString(LocalDate localDate) {
+                if (localDate == null)
+                    return "";
+                return dateTimeFormatter.format(localDate);
+            }
+
+            @Override
+            public LocalDate fromString(String dateString) {
+                if (dateString == null || dateString.trim().isEmpty()) {
+                    return null;
+                }
+                return LocalDate.parse(dateString, dateTimeFormatter);
+            }
+        });
+        dateFrom.setConverter(new StringConverter<LocalDate>() {
+            private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+            @Override
+            public String toString(LocalDate localDate) {
+                if (localDate == null)
+                    return "";
+                return dateTimeFormatter.format(localDate);
+            }
+
+            @Override
+            public LocalDate fromString(String dateString) {
+                if (dateString == null || dateString.trim().isEmpty()) {
+                    return null;
+                }
+                return LocalDate.parse(dateString, dateTimeFormatter);
+            }
+        });
     }
 }

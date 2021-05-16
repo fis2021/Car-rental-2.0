@@ -33,7 +33,7 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <Label fx:id="warningLabel" alignment="CENTER" prefWidth="250.0" text="label warning" textFill="WHITE" translateY="145.0">
+            <Label fx:id="warningLabel" alignment="CENTER" prefWidth="250.0" text="label warning" textFill="WHITE" translateY="145.0" visible="false">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
