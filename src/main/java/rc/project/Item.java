@@ -25,7 +25,9 @@ import java.text.BreakIterator;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Currency;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Item implements Initializable {
@@ -157,8 +159,6 @@ public class Item implements Initializable {
         }
     }
 
-
-
     public void loadOrders(ActionEvent event) throws IOException {
         if (i == 1) {
             ok = 0;
@@ -213,6 +213,7 @@ public class Item implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         dateTo.setConverter(new StringConverter<LocalDate>() {
             private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
