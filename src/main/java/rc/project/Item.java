@@ -78,6 +78,8 @@ public class Item implements Initializable {
 
     private double price;
 
+    private String role = "user";
+
     private String idUser = LoginController.id;
 
     public void setData(Car car) {
@@ -88,12 +90,13 @@ public class Item implements Initializable {
         detailsLabel.setText(car.getDetails());
         Image image = new Image(getClass().getResourceAsStream(car.getImgSrc()));
         itemPhoto.setImage(image);
-        pane.setStyle("-fx-background-color: radial-gradient(center 50% 50% , radius 60% ,#" + car.getColor1() +", #" + car.getColor2() +");");
+        pane.setStyle("-fx-background-color: radial-gradient(center 50% 50% , radius 60% ,#" + car.getColor1() + ", #" + car.getColor2() + ");");
     }
 
     private int i = 1, k = 1, ok = 1;
+
     public void loadDetalii(ActionEvent event) throws IOException, SQLException {
-        if(k==1 && ok == 1) {
+        if (k == 1 && ok == 1) {
             this.itemPhoto.setVisible(false);
             this.itemOrder.setVisible(false);
             this.itemText.setVisible(false);
@@ -101,8 +104,7 @@ public class Item implements Initializable {
             this.detailsLabel.setVisible(true);
             this.itemDetails.setText("Go back");
             k++;
-        }
-        else if (k==2 && ok == 1) {
+        } else if (k == 2 && ok == 1) {
             this.itemPhoto.setVisible(true);
             this.itemDetails.setVisible(true);
             this.itemOrder.setVisible(true);
@@ -112,7 +114,7 @@ public class Item implements Initializable {
             this.itemDetails.setText("Details");
             k = 1;
         }
-        if((i > 1) && (dateFrom.getValue() != null) && (dateTo.getValue() != null)) {
+        if ((i > 1) && (dateFrom.getValue() != null) && (dateTo.getValue() != null)) {
             System.out.println("Confirm");
             this.ordersVbox.setVisible(false);
             this.itemPhoto.setVisible(true);
@@ -135,7 +137,7 @@ public class Item implements Initializable {
             String carId = "";
             String status = "pending";
             ResultSet rs = connectDB.createStatement().executeQuery("SELECT * from cars WHERE carimg = '" + car.getImgSrc() + "'");
-            while (rs.next()){
+            while (rs.next()) {
                 carId = rs.getString("id");
             }
 
@@ -147,7 +149,7 @@ public class Item implements Initializable {
                 Statement statement = connectDB.createStatement();
                 statement.executeUpdate(insertOrder);
 
-            } catch(SQLException throwables) {
+            } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
 
@@ -159,8 +161,53 @@ public class Item implements Initializable {
         }
     }
 
+    private void checkRole() {
+
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String verifyLogin = "SELECT count(1) FROM users WHERE id = '" + LoginController.id + "' AND role = 'admin'";
+
+        try {
+
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(verifyLogin);
+
+            while (queryResult.next()) {
+                if (queryResult.getInt(1) == 1) {
+                    role = "admin";
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
+
     public void loadOrders(ActionEvent event) throws IOException {
-        if (i == 1) {
+        if (i == 0) {
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connectDB = connectNow.getConnection();
+            String cname = car.getName();
+
+            String deleteCars = "DELETE FROM cars WHERE carimg = '" + car.getImgSrc() + "' ";
+
+            try {
+
+                Statement statement = connectDB.createStatement();
+                int queryResult = statement.executeUpdate(deleteCars);
+
+                if (queryResult != 0) {
+                    System.out.println("Car " + cname + " removed");
+                }
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        } else if (i == 1) {
             ok = 0;
             this.itemPhoto.setVisible(false);
             this.itemText.setVisible(false);
@@ -176,7 +223,7 @@ public class Item implements Initializable {
             this.itemPrice.setVisible(false);
             this.ordersVbox.setVisible(true);
             this.warningLabel.setVisible(false);
-            if((dateFrom.getValue() != null) && (dateTo.getValue() != null)) {
+            if ((dateFrom.getValue() != null) && (dateTo.getValue() != null)) {
 
                 //calculate price
                 price = car.getPrice() * Period.between(dateFrom.getValue(), dateTo.getValue()).getDays();
@@ -188,7 +235,7 @@ public class Item implements Initializable {
                 this.itemOrder.setText("Go back");
                 this.itemDetails.setText("Confirm");
                 i++;
-            } else if((dateFrom.getValue() == null) || (dateTo.getValue() == null)){
+            } else if ((dateFrom.getValue() == null) || (dateTo.getValue() == null)) {
                 this.warningLabel.setVisible(true);
                 this.warningLabel.setText("Please complete the dates");
             } else {
@@ -209,10 +256,40 @@ public class Item implements Initializable {
             ok = 1;
             i = 1;
         }
+
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        checkRole();
+        if (role.equals("admin")) {
+            i = 0;
+            this.itemOrder.setText("Remove car");
+
+//            DatabaseConnection connectNow = new DatabaseConnection();
+//            Connection connectDB = connectNow.getConnection();
+//            String cname = car.getName();
+//
+//            String deleteCars = "DELETE FROM cars WHERE carimg = '" + car.getImgSrc() + "' ";
+//
+//            try {
+//
+//                Statement statement = connectDB.createStatement();
+//                int queryResult = statement.executeUpdate(deleteCars);
+//
+//                if(queryResult != 0){
+//                    System.out.println("Car " + cname + " removed");
+//                }
+//
+//            } catch (SQLException throwables) {
+//                throwables.printStackTrace();
+//            }
+
+
+            System.out.println("sunt admin");
+        }
+
 
         dateTo.setConverter(new StringConverter<LocalDate>() {
             private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
