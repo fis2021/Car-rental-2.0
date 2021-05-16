@@ -70,7 +70,6 @@ public class ContactDealer implements Initializable {
                 contact1 = new Contact();
 
                 contact1.setName(rs.getString("fullname"));
-//                contact1.setPhone();
                 contact1.setMessage(rs.getString("message"));
 
                 ResultSet rs1 = connectDB.createStatement().executeQuery("SELECT * from users where email = '" + rs.getString("email") +"'");
