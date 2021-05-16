@@ -63,6 +63,14 @@ public class Dealer {
         changeMeDealer.getChildren().setAll(content);
     }
 
+    @FXML
+    public void loadContactDealer(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/ContactDealer.fxml"));
+        Parent content = loader.load();
+        changeMeDealer.getChildren().setAll(content);
+    }
+
 
 
 }
