@@ -55,4 +55,14 @@ public class Dealer {
         anchorPane.getChildren().setAll(content);
     }
 
+    @FXML
+    public void loadOrdersDealer(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/SeeOrders.fxml"));
+        Parent content = loader.load();
+        changeMeDealer.getChildren().setAll(content);
+    }
+
+
+
 }
