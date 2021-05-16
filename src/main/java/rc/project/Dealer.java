@@ -40,12 +40,19 @@ public class Dealer {
     }
 
     @FXML
+    public void loadEditCars(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("fxml/EditCarsPage.fxml"));
+        Parent content = loader.load();
+        changeMeDealer.getChildren().setAll(content);
+    }
+
+    @FXML
     public void signOutOnAction(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("fxml/LoginMain.fxml"));
         Parent content = loader.load();
         anchorPane.getChildren().setAll(content);
-
     }
 
 }
