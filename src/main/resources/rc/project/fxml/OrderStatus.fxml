@@ -18,43 +18,72 @@
          <children>
             <HBox prefHeight="50.0" prefWidth="800.0">
                <children>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Car model:" translateX="40.0" translateY="15.0">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Car model:" translateX="20.0" translateY="15.0">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                   </Text>
-                  <Text fx:id="carModel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="40.0" translateY="15.0">
+                  <Text fx:id="orderModel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="25.0" translateY="15.0" HBox.hgrow="NEVER">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" translateX="250.0" translateY="15.0">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" translateX="180.0" translateY="15.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="-100.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="orderPrice" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="185.0" translateY="15.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="From:" translateX="240.0" translateY="15.0">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                   </Text>
-                  <Text fx:id="carDate" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="250.0" translateY="15.0">
+                  <Text fx:id="orderFrom" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="245.0" translateY="15.0">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" translateX="500.0" translateY="15.0">
+                  <Text fx:id="carDate3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="To:" translateX="300.0" translateY="15.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="orderTo" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="305.0" translateY="15.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" translateX="365.0" translateY="15.0">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                   </Text>
-                  <Text fx:id="carStatus" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="500.0" translateY="15.0">
+                  <Text fx:id="orderStatus" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="370.0" translateY="15.0">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                   </Text>
                </children>
