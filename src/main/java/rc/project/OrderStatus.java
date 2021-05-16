@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class OrderStatus implements Initializable {
+public class OrderStatus {
 
     @FXML
     private Text orderModel;
@@ -29,26 +29,14 @@ public class OrderStatus implements Initializable {
 
     private String idUser = LoginController.id;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connectDB = connectNow.getConnection();
 
-        try {
-            ResultSet rs = connectDB.createStatement().executeQuery("SELECT * from orders WHERE id = '"+ idUser +"' ");
-            ResultSet rs1 = connectDB.createStatement().executeQuery("SELECT * from cars ");
-            while (rs1.next()) {
-                orderModel.setText(rs1.getString("carname"));
+    public void setData(Order order){
 
-            }
-            while (rs.next()) {
-                orderPrice.setText(rs.getString("price"));
-                orderFrom.setText(rs.getString("dateFrom"));
-                orderTo.setText(rs.getString("dateTo"));
-                orderStatus.setText(rs.getString("status"));
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        orderModel.setText(order.getName());
+        orderFrom.setText(order.getDateFrom());
+        orderTo.setText(order.getDateTo());
+        orderStatus.setText(order.getStatus());
+        orderPrice.setText(String.valueOf(order.getPrice()));
+
     }
 }
