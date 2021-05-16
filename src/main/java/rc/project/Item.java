@@ -18,11 +18,14 @@ import javafx.util.StringConverter;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.BreakIterator;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.Currency;
 import java.util.ResourceBundle;
 
 public class Item implements Initializable {
@@ -71,6 +74,8 @@ public class Item implements Initializable {
 
     private Car car;
 
+    private double price;
+
     private String idUser = LoginController.id;
 
     public void setData(Car car) {
@@ -85,7 +90,7 @@ public class Item implements Initializable {
     }
 
     private int i = 1, k = 1, ok = 1;
-    public void loadDetalii(ActionEvent event) throws IOException {
+    public void loadDetalii(ActionEvent event) throws IOException, SQLException {
         if(k==1 && ok == 1) {
             this.itemPhoto.setVisible(false);
             this.itemOrder.setVisible(false);
@@ -125,11 +130,15 @@ public class Item implements Initializable {
             Connection connectDB = connectNow.getConnection();
             System.out.println("DB Connected.");
 
-            String carId = "1";
+            String carId = "";
             String status = "pending";
+            ResultSet rs = connectDB.createStatement().executeQuery("SELECT * from cars WHERE carimg = '" + car.getImgSrc() + "'");
+            while (rs.next()){
+                carId = rs.getString("id");
+            }
 
-            String insertFields = "INSERT INTO orders (userId, carId, status, dateFrom, dateTo ) VALUES ('";
-            String insertValues = idUser + "','" + carId + "','" + status + "','" + dateTo.getValue() + "','" + dateFrom.getValue() + "')";
+            String insertFields = "INSERT INTO orders (userId, carId, status, dateFrom, dateTo, price ) VALUES ('";
+            String insertValues = idUser + "','" + carId + "','" + status + "','" + dateTo.getValue() + "','" + dateFrom.getValue() + "','" + price + "')";
             String insertOrder = insertFields + insertValues;
 
             try {
@@ -147,6 +156,8 @@ public class Item implements Initializable {
             this.warningLabel.setVisible(false);
         }
     }
+
+
 
     public void loadOrders(ActionEvent event) throws IOException {
         if (i == 1) {
@@ -166,6 +177,11 @@ public class Item implements Initializable {
             this.ordersVbox.setVisible(true);
             this.warningLabel.setVisible(false);
             if((dateFrom.getValue() != null) && (dateTo.getValue() != null)) {
+
+                //calculate price
+                price = car.getPrice() * Period.between(dateFrom.getValue(), dateTo.getValue()).getDays();
+                this.priceText.setText(String.valueOf(price));
+
                 this.warningLabel.setVisible(false);
                 this.totalPrice.setVisible(true);
                 this.priceText.setVisible(true);

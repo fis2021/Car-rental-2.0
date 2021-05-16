@@ -85,7 +85,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="priceText" prefHeight="22.0" prefWidth="56.0" text=" text" textFill="WHITE" translateX="145.0" translateY="59.0" visible="false">
+                  <Label fx:id="priceText" prefHeight="22.0" prefWidth="56.0" text="text" textFill="WHITE" translateX="150.0" translateY="59.0" visible="false">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
