@@ -14,6 +14,9 @@ import javafx.scene.layout.Region;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -44,36 +47,29 @@ public class Dashboard implements Initializable {
     private List<Car> cars = new ArrayList<>();
 
     private List<Car> getDataHome() {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
         List<Car> cars = new ArrayList<>();
         Car car;
 
-        car = new Car();
-        car.setName("Mercedes Benz 300se");
-        car.setPrice(180);
-        car.setImgSrc("masini/mercedes1.png");
-        car.setDetails("- Made in 1978\n- 2 seats");
-        car.setColor1("8896A0");
-        car.setColor2("31444A");
-        cars.add(car);
+        try {
+            ResultSet rs = connectDB.createStatement().executeQuery("SELECT * from cars");
+            while (rs.next()) {
+                if (rs.getInt("id") == 5 || rs.getInt("id") == 7 || rs.getInt("id") == 9) {
 
-        car = new Car();
-        car.setName("Volkswagen Karmann Ghia");
-        car.setPrice(170);
-        car.setImgSrc("masini/volkswagen-3754571_640.png");
-        car.setDetails("-Made in 1969\n- Isolated or convertible\n- 2 seats");
-        car.setColor1("A5FE83");
-        car.setColor2("02A08E");
-        cars.add(car);
-
-        car = new Car();
-        car.setName("Volkswagen Bus T1");
-        car.setPrice(230);
-        car.setImgSrc("masini/vw-4309412_640.png");
-        car.setDetails("- Designed for the perfect\n  camping experience\n- 9 seats");
-        car.setColor1("019F8E");
-        car.setColor2("2A52A4");
-        cars.add(car);
-
+                    car = new Car();
+                    car.setName(rs.getString("carname"));
+                    car.setPrice(rs.getInt("carprice"));
+                    car.setImgSrc(rs.getString("carimg"));
+                    car.setDetails(rs.getString("cardetails"));
+                    car.setColor1(rs.getString("color1"));
+                    car.setColor2(rs.getString("color2"));
+                    cars.add(car);
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return cars;
     }
 
@@ -105,7 +101,7 @@ public class Dashboard implements Initializable {
 
                 GridPane.setMargin(anchorPane, new Insets(11));
             }
-        } catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -150,6 +146,7 @@ public class Dashboard implements Initializable {
         Parent content = loader.load();
         dashboardPane.getChildren().setAll(content);
     }
+
     @FXML
     void signOutOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();

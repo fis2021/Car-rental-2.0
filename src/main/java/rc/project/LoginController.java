@@ -47,6 +47,7 @@ public class LoginController {
 
     private String role;
 
+
     @FXML
     public void loginButtonAction(ActionEvent event) throws IOException {
         String nextFXML;
@@ -81,7 +82,7 @@ public class LoginController {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT count(1) FROM users WHERE email = '" + usernameField.getText() + "' AND password = '" + passwordField.getText() + "'";
+        String verifyLogin = "SELECT count(1) FROM users WHERE email = '" + usernameField.getText() + "' AND replace(cast(aes_decrypt(password, 'key1234') as char(100)), '"+ usernameField.getText() +"', '') = '" + passwordField.getText() + "'";
 
 
         try{
@@ -111,7 +112,8 @@ public class LoginController {
     public void getUser(){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String getRow = "SELECT * FROM users WHERE email = '" + usernameField.getText() + "' AND password = '" + passwordField.getText() + "'";
+//        String getRow = "SELECT * FROM users WHERE email = '" + usernameField.getText() + "' AND password = '" + passwordField.getText() + "'";
+        String getRow = "SELECT * FROM users WHERE email = '" + usernameField.getText() + "'";
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(getRow);

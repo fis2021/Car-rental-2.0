@@ -1,6 +1,9 @@
 package rc.project;
 
+import java.sql.Connection;
+
 public class Car {
+
     private String name;
     private String imgSrc;
     private String details;
@@ -55,4 +58,5 @@ public class Car {
     public void setColor2(String color) {
         this.color2 = color;
     }
+
 }
