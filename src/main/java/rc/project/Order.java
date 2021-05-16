@@ -7,6 +7,33 @@ public class Order {
     private String dateFrom;
     private String dateTo;
     private String status;
+    private String namePerson;
+    private String age;
+    private String phone;
+
+    public String getNamePerson() {
+        return namePerson;
+    }
+
+    public void setNamePerson(String namePerson) {
+        this.namePerson = namePerson;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public String getName() {
         return name;

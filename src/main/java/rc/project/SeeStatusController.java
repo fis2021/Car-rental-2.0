@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
@@ -18,26 +17,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Status implements Initializable {
+public class SeeStatusController implements Initializable {
+
     @FXML
     private GridPane gridStatus;
 
     private List<Order> orders = new ArrayList<>();
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         orders.addAll(getData());
         int column = 0;
         int row = 1;
         try {
             for (int i = 0; i < orders.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("fxml/OrderStatus.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("fxml/OrderStatusDealer.fxml"));
 
                 AnchorPane anchorPane = fxmlLoader.load();
 
-                OrderStatus orderStatus = fxmlLoader.getController();
-                orderStatus.setData(orders.get(i));
+                OrderStatusDealer orderStatusDealer = fxmlLoader.getController();
+                orderStatusDealer.setData(orders.get(i));
 
                 gridStatus.add(anchorPane, column, row++);
                 //width
@@ -65,6 +65,7 @@ public class Status implements Initializable {
 
         try {
             ResultSet rs = connectDB.createStatement().executeQuery("SELECT * from orders");
+
             while (rs.next()) {
                 order1 = new Order();
 
@@ -76,6 +77,13 @@ public class Status implements Initializable {
                 ResultSet rs1 = connectDB.createStatement().executeQuery("SELECT * from cars where id = '" + rs.getString("carId") +"'");
                 while(rs1.next()){
                     order1.setName(rs1.getString("carname"));
+
+                    ResultSet rs2 = connectDB.createStatement().executeQuery("SELECT * from users where id ='" + rs.getString("userId") +"'");
+                    while(rs2.next()) {
+                        order1.setNamePerson(rs2.getString("firstname") + " " + rs2.getString("lastname"));
+                        order1.setAge(rs2.getString("age"));
+                        order1.setPhone(rs2.getString("phone"));
+                    }
                 }
 
                 orders.add(order1);
@@ -85,6 +93,4 @@ public class Status implements Initializable {
         }
         return orders;
     }
-
-
 }
