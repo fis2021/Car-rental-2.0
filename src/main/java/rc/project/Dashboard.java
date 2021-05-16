@@ -51,11 +51,12 @@ public class Dashboard implements Initializable {
         Connection connectDB = connectNow.getConnection();
         List<Car> cars = new ArrayList<>();
         Car car;
+        int k = 0;
 
         try {
             ResultSet rs = connectDB.createStatement().executeQuery("SELECT * from cars");
-            while (rs.next()) {
-                if (rs.getInt("id") == 5 || rs.getInt("id") == 7 || rs.getInt("id") == 9) {
+            while (rs.next() && k < 3) {
+
 
                     car = new Car();
                     car.setName(rs.getString("carname"));
@@ -65,7 +66,9 @@ public class Dashboard implements Initializable {
                     car.setColor1(rs.getString("color1"));
                     car.setColor2(rs.getString("color2"));
                     cars.add(car);
-                }
+
+                    k++;
+
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

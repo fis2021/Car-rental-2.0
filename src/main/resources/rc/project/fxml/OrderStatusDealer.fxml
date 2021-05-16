@@ -130,16 +130,21 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Text>
-                  <Button maxWidth="69.6" mnemonicParsing="false" styleClass="record-sales" text="Deny" textFill="WHITE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="denyButton" maxWidth="69.6" mnemonicParsing="false" onAction="#denyAction" styleClass="record-sales" text="Deny" textFill="WHITE" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" styleClass="record-sales" text="Accept" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                  <Button fx:id="acceptButton" mnemonicParsing="false" onAction="#acceptAction" styleClass="record-sales" text="Accept" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
+                  <Text fx:id="responseText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
                </children>
             </GridPane>
             <HBox prefHeight="50.0" prefWidth="1020.0" visible="false" />
