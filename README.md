@@ -14,6 +14,7 @@ The purpose of this application is to help a client rent a car by showcasing a l
 * [JavaFX (GUI)](https://openjfx.io/openjfx-docs/)
 * [Maven (Build Tool)](https://maven.apache.org/)
 * [MySQL (Database)](https://www.mysql.com/downloads/)
+* In order to run this app you need to execute car_db.sql from resources.
 
 ## Functionality
                                                                                                        
