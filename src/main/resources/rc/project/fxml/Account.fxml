@@ -20,21 +20,21 @@
                     </font>
                 </Text>
             <Separator layoutY="106.0" prefHeight="5.0" prefWidth="840.0" />
-            <Text fx:id="name" layoutX="235.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="271.13671875">
+            <Text fx:id="name" fill="WHITE" layoutX="428.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="271.13671875">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font></Text>
-            <Label layoutX="100.0" layoutY="200.0" prefHeight="30.0" prefWidth="82.0" text="Name:" textFill="#ebebeb">
+            <Label layoutX="244.0" layoutY="200.0" prefHeight="30.0" prefWidth="82.0" text="Name:" textFill="#ebebeb">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="250.0" prefHeight="21.0" prefWidth="53.0" text="Email:" textFill="#ebebeb">
+            <Label layoutX="244.0" layoutY="250.0" prefHeight="21.0" prefWidth="53.0" text="Email:" textFill="#ebebeb">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="300.0" prefHeight="17.0" prefWidth="53.0" text="Phone:" textFill="#ebebeb">
+            <Label layoutX="244.0" layoutY="300.0" prefHeight="17.0" prefWidth="53.0" text="Phone:" textFill="#ebebeb">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -44,14 +44,14 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Text fx:id="email" layoutX="235.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="252.13671875">
+            <Text fx:id="email" fill="WHITE" layoutX="428.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="252.13671875">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <Text fx:id="phone" layoutX="235.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="271.13671875">
+            <Text fx:id="phone" fill="WHITE" layoutX="428.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="271.13671875">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Text>
             <PasswordField fx:id="currentPassword" layoutX="428.0" layoutY="400.0" />

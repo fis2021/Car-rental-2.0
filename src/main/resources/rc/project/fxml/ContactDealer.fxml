@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1040.0" style="-fx-background-color: #333333;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.SeeStatusController">
+<AnchorPane prefHeight="600.0" prefWidth="1040.0" style="-fx-background-color: #333333;" stylesheets="@../css/Display.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rc.project.ContactDealer">
     <children>
         <Pane prefHeight="600.0" prefWidth="1040.0" style="-fx-background-color: #555555;" styleClass="display2">
             <children>
