@@ -82,7 +82,7 @@ public class Account implements Initializable {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT count(1) FROM users WHERE id  = '" + idAccount + "' AND password = '" + currentPassword.getText() + "'";
+        String verifyLogin = "SELECT count(1) FROM users WHERE id  = '" + idAccount + "' AND replace(cast(aes_decrypt(password, 'key1234') as char(100)), email, '') = '" + currentPassword.getText() + "'";
 
 
         try {
@@ -108,7 +108,8 @@ public class Account implements Initializable {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String updatePassword = "UPDATE users\n" + "set password = '" + newPassword.getText() + "'\n" + "where id =" + idAccount;
+        String updatePassword;
+        updatePassword = "UPDATE users\n" + "set password =  aes_encrypt(concat('" + newPassword.getText() + "', '" + email.getText() + "'), 'key1234') " + "\n" + "where id =" + idAccount;
 
         try {
             Statement statement = connectDB.createStatement();

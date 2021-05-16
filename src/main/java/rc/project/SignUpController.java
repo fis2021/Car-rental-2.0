@@ -112,12 +112,33 @@ public class SignUpController implements Initializable {
 
     @FXML
     public void signUpAction() {
-        if (passwordTextField.getText().equals(confirmPassword.getText())) {
-            registerUser();
+        if (!firstName.getText().isBlank()
+                && !lastName.getText().isBlank()
+                && dateOfBirth.getValue() != null
+                && !emailTextField.getText().isBlank()
+                && !passwordTextField.getText().isBlank()
+                && !confirmPassword.getText().isBlank()) {
+            if (passwordTextField.getText().equals(confirmPassword.getText())) {
+                if (emailTextField.getText() != passwordTextField.getText()) {
+                    if (ageCounter() >= 18) {
+                        registerUser();
+                    } else {
+                        confirmPasswordLabel.setText("You must be at least 18 years old.");
+                    }
 
-        } else {
-            confirmPasswordLabel.setText("Password does not match.");
+                } else {
+                    confirmPasswordLabel.setText("Email and password must be different for security issues.");
+                }
+
+                 } else {
+                confirmPasswordLabel.setText("Password does not match.");
+            }
+
+            } else {
+            confirmPasswordLabel.setText("All fields must be filled.");
+
         }
+
 
     }
 
@@ -134,15 +155,17 @@ public class SignUpController implements Initializable {
         int age = ageCounter();
 
         String insertFields = "INSERT INTO users (firstname, lastname, email, password, phone, age, role) VALUES ('";
-        String insertValues = firstname + "','" + lastname + "','" + email + "','" + password + "','" + phone + "','" + age + "','user')";
+        String insertValues = firstname + "','" + lastname + "','" + email + "'," + " aes_encrypt(concat('" + password + "', '" + email + "'), 'key1234') " + ",'" + phone + "','" + age + "','user')";
         String insertRegister = insertFields + insertValues;
 
         try {
             Statement statement = connectDB.createStatement();
             statement.executeUpdate(insertRegister);
+            confirmPasswordLabel.setText("");
             registrationMessage.setText("User has been registered successfully!");
 
         } catch (Exception e) {
+            registrationMessage.setText("");
             confirmPasswordLabel.setText("Email invalid!");
             e.printStackTrace();
             e.getCause();
