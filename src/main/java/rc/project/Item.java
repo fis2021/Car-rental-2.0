@@ -175,7 +175,7 @@ public class Item implements Initializable {
 
             while (queryResult.next()) {
                 if (queryResult.getInt(1) == 1) {
-                   role = "admin";
+                    role = "admin";
                 }
 
             }
@@ -188,8 +188,26 @@ public class Item implements Initializable {
     }
 
     public void loadOrders(ActionEvent event) throws IOException {
+        if (i == 0) {
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connectDB = connectNow.getConnection();
+            String cname = car.getName();
 
-        if (i == 1) {
+            String deleteCars = "DELETE FROM cars WHERE carimg = '" + car.getImgSrc() + "' ";
+
+            try {
+
+                Statement statement = connectDB.createStatement();
+                int queryResult = statement.executeUpdate(deleteCars);
+
+                if (queryResult != 0) {
+                    System.out.println("Car " + cname + " removed");
+                }
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        } else if (i == 1) {
             ok = 0;
             this.itemPhoto.setVisible(false);
             this.itemText.setVisible(false);
@@ -249,8 +267,29 @@ public class Item implements Initializable {
             i = 0;
             this.itemOrder.setText("Remove car");
 
+//            DatabaseConnection connectNow = new DatabaseConnection();
+//            Connection connectDB = connectNow.getConnection();
+//            String cname = car.getName();
+//
+//            String deleteCars = "DELETE FROM cars WHERE carimg = '" + car.getImgSrc() + "' ";
+//
+//            try {
+//
+//                Statement statement = connectDB.createStatement();
+//                int queryResult = statement.executeUpdate(deleteCars);
+//
+//                if(queryResult != 0){
+//                    System.out.println("Car " + cname + " removed");
+//                }
+//
+//            } catch (SQLException throwables) {
+//                throwables.printStackTrace();
+//            }
+
+
             System.out.println("sunt admin");
         }
+
 
         dateTo.setConverter(new StringConverter<LocalDate>() {
             private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
