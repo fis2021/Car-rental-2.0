@@ -193,19 +193,25 @@ public class Item implements Initializable {
             Connection connectDB = connectNow.getConnection();
             String cname = car.getName();
 
+            String getId = "SELECT * FROM cars WHERE carimg = '" + car.getImgSrc() + "' ";
             String deleteCars = "DELETE FROM cars WHERE carimg = '" + car.getImgSrc() + "' ";
 
             try {
 
                 Statement statement = connectDB.createStatement();
-                int queryResult = statement.executeUpdate(deleteCars);
+                ResultSet rs =  statement.executeQuery(getId);
 
-                if (queryResult != 0) {
-                    System.out.println("Car " + cname + " removed");
+                while(rs.next()){
+                    connectDB.createStatement().executeUpdate("DELETE FROM orders WHERE carId ='" + rs.getString("id") + "'");
+                    if (connectDB.createStatement().executeUpdate(deleteCars) != 0) {
+                        System.out.println("Car " + cname + " removed");
+                    }
                 }
+
 
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+                throwables.getCause();
             }
         } else if (i == 1) {
             ok = 0;
