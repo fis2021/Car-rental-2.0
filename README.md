@@ -1,6 +1,6 @@
 # CAR RENTAL 2.0
 
-![](main/resources/pic1.png)
+![](src/main/resources/pic1.png)
 
 ## Table of contents
 * [General Description](#general-description)
@@ -30,6 +30,9 @@ The purpose of this application is to help a client rent a car by showcasing a l
 
 - A customer can also leave a review or a message to the dealer.
 
+![](src/main/resources/pic2.png)
+
+
 ### Dealer:
 
 - After the sales representant logs in, he can add, edit, delete available cars.
@@ -43,7 +46,8 @@ The purpose of this application is to help a client rent a car by showcasing a l
 ## Issue Tracking
 Link to the Jira Instance [here](https://masinutanubarcuta.atlassian.net/jira/software/projects/CR/boards/1/backlog)
 
-
+![](src/main/resources/pic4.png)
+![](src/main/resources/pic3.png)
 
 
 
