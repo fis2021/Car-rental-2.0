@@ -1,5 +1,7 @@
 # CAR RENTAL 2.0
 
+![](main/resources/pic1.png)
+
 ## Table of contents
 * [General Description](#general-description)
 * [Technologies Used](#technologies-used)
